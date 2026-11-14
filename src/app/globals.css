@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #111827;
+    background-color: #F7F5F0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+  }
+
+  ::selection {
+    background-color: #F28C38;
+    color: #FFFFFF;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #111827;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #F28C38;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D97706;
+  }
+}
+
+@layer components {
+  /* Section containers */
+  .section-dark {
+    @apply bg-navy text-ivory;
+  }
+
+  .section-light {
+    @apply bg-ivory text-navy;
+  }
+
+  .section-surface {
+    @apply bg-surface text-ivory;
+  }
+
+  /* Orange accent line */
+  .accent-line {
+    @apply w-16 h-1 bg-orange;
+  }
+
+  .accent-line-wide {
+    @apply w-24 h-0.5 bg-orange;
+  }
+
+  /* Editorial container */
+  .editorial-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .editorial-wide {
+    @apply max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+
+  .editorial-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  .glass-dark {
+    @apply bg-navy/80 backdrop-blur-md border border-white/5;
+  }
+
+  /* Editorial typography */
+  .editorial-heading {
+    @apply font-heading font-bold tracking-tight;
+  }
+
+  .editorial-body {
+    @apply font-body leading-relaxed;
+  }
+
+  .editorial-label {
+    @apply text-xs font-bold uppercase tracking-[2px] text-orange;
+  }
+
+  /* Card styles */
+  .card-editorial {
+    @apply relative overflow-hidden rounded-sm border border-navy/10 bg-white 
+           transition-all duration-500 hover:shadow-xl hover:border-orange/30;
+  }
+
+  .card-dark {
+    @apply relative overflow-hidden rounded-sm border border-white/10 bg-navy-light/50 
+           transition-all duration-500 hover:border-orange/40;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-8 py-4 bg-orange text-white font-heading font-semibold 
+           text-sm tracking-wide uppercase transition-all duration-300 
+           hover:bg-orange-dark hover:shadow-lg hover:shadow-orange/20
+           focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-8 py-4 border-2 border-orange text-orange font-heading font-semibold 
+           text-sm tracking-wide uppercase transition-all duration-300 
+           hover:bg-orange hover:text-white
+           focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-6 py-3 text-orange font-heading font-semibold 
+           text-sm tracking-wide uppercase transition-all duration-300 
+           hover:bg-orange/10
+           focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2;
+  }
+
+  /* Grid patterns */
+  .bg-grid {
+    background-image: 
+      linear-gradient(rgba(242, 140, 56, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(242, 140, 56, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(rgba(242, 140, 56, 0.15) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  /* WordPress content styling */
+  .wp-content {
+    @apply editorial-body text-base leading-relaxed;
+  }
+
+  .wp-content h1 {
+    @apply text-display-md font-heading font-bold mt-12 mb-6;
+  }
+
+  .wp-content h2 {
+    @apply text-display-sm font-heading font-bold mt-10 mb-4;
+  }
+
+  .wp-content h3 {
+    @apply text-xl font-heading font-semibold mt-8 mb-3;
+  }
+
+  .wp-content p {
+    @apply mb-4 text-base leading-relaxed;
+  }
+
+  .wp-content ul, .wp-content ol {
+    @apply mb-4 pl-6;
+  }
+
+  .wp-content li {
+    @apply mb-2;
+  }
+
+  .wp-content ul li {
+    @apply list-disc;
+  }
+
+  .wp-content ol li {
+    @apply list-decimal;
+  }
+
+  .wp-content a {
+    @apply text-orange hover:text-orange-dark underline underline-offset-2 transition-colors;
+  }
+
+  .wp-content blockquote {
+    @apply border-l-4 border-orange pl-6 py-2 my-6 italic text-muted;
+  }
+
+  .wp-content strong {
+    @apply font-semibold;
+  }
+
+  .wp-content hr {
+    @apply my-8 border-navy/10;
+  }
+
+  .wp-content img {
+    @apply rounded-sm my-6 max-w-full h-auto;
+  }
+
+  /* Loading skeleton */
+  .skeleton {
+    @apply animate-pulse bg-navy/10 rounded;
+  }
+
+  .skeleton-dark {
+    @apply animate-pulse bg-white/10 rounded;
+  }
+}
+
+@layer utilities {
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Custom text balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Orange text gradient */
+  .text-gradient-orange {
+    @apply bg-gradient-to-r from-orange to-orange-light bg-clip-text text-transparent;
+  }
+}
+
+/* Loading screen styles */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0B1020;
+}
+
+.loading-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #F7F5F0;
+  letter-spacing: 0.1em;
+}
+
+.loading-bar {
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 2px;
+  background: rgba(242, 140, 56, 0.2);
+  overflow: hidden;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  background: #F28C38;
+  animation: loadingFill 1.5s ease-in-out;
+}
+
+@keyframes loadingFill {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
