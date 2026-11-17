@@ -1,6 +1,12 @@
+const isGithubActions = process.env.GITHUB_ACTIONS || false;
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: isGithubActions ? '/marketecture' : '',
+  trailingSlash: true,
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -19,18 +25,6 @@ const nextConfig = {
         hostname: 'secure.gravatar.com',
       },
     ],
-  },
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'X-Frame-Options', value: 'DENY' },
-          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
-        ],
-      },
-    ];
   },
 };
 
