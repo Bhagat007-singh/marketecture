@@ -95,8 +95,8 @@ export default function IndianSpotlight() {
           >
             <span className="editorial-label mb-4 block">Indian Marketing</span>
             <h2 className="text-display-lg text-ivory mb-6">
-              The World&apos;s Most{' '}
-              <span className="text-orange">Complex</span> Consumer Market
+              Decoding India&apos;s{' '}
+              <span className="text-orange">Dynamic</span> Consumer Landscape
             </h2>
             <div className="accent-line mb-8" />
             <p className="text-muted text-lg leading-relaxed mb-6">

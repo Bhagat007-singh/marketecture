@@ -1,9 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
-import { validateEmail } from '@/lib/utils';
-import { Check } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 const exploreLinks = [
   { label: 'Campaign Archive', href: '/campaigns' },
@@ -23,22 +21,8 @@ const resourceLinks = [
 ];
 
 export default function Footer() {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !validateEmail(email)) return;
-    try {
-      const subs = JSON.parse(localStorage.getItem('marketecture_subscribers') || '[]');
-      if (!subs.includes(email)) {
-        subs.push(email);
-        localStorage.setItem('marketecture_subscribers', JSON.stringify(subs));
-      }
-    } catch {}
-    setSubscribed(true);
-    setEmail('');
-  };
+  const pathname = usePathname();
+  if (pathname === '/') return null;
 
   return (
     <footer className="relative bg-navy text-ivory" role="contentinfo">
@@ -95,39 +79,16 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* About & Mission */}
           <div>
-            <h3 className="editorial-label mb-6">Connect</h3>
-            <p className="mb-4 text-sm text-ivory/60">
-              Subscribe to our newsletter for the latest marketing insights, campaigns, and strategies.
+            <h3 className="editorial-label mb-6">Marketecture</h3>
+            <p className="mb-4 text-sm text-ivory/60 leading-relaxed">
+              Where marketing ideas take shape. An open intelligence platform decoding iconic Indian and global campaigns, Kotlerian frameworks, and modern brand strategy.
             </p>
-            {subscribed ? (
-              <div className="flex items-center gap-2 p-3 bg-orange/10 border border-orange/30 rounded-sm text-xs text-orange">
-                <Check className="w-4 h-4" />
-                <span>Thank you for subscribing!</span>
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="flex flex-col gap-3 sm:flex-row lg:flex-col"
-              >
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="your@email.com"
-                  required
-                  className="flex-1 rounded-sm border border-white/10 bg-white/5 px-4 py-3 text-sm text-ivory placeholder-muted/50 outline-none transition-colors focus:border-orange/50"
-                  aria-label="Email address"
-                />
-                <button
-                  type="submit"
-                  className="rounded-sm bg-orange px-6 py-3 font-heading text-xs font-semibold uppercase tracking-wider text-white transition-all duration-300 hover:bg-orange-dark hover:shadow-lg hover:shadow-orange/20"
-                >
-                  Subscribe
-                </button>
-              </form>
-            )}
+            <div className="flex items-center gap-2 text-xs text-orange font-mono">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>26 Deep-Dive Case Studies Live</span>
+            </div>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function IndianMarketingPage() {
     <div className="bg-ivory min-h-screen">
       <PageHero
         label="INDIAN MARKETING"
-        title="The World's Most Complex Consumer Market."
+        title="Decoding India's Dynamic Consumer Landscape."
         description="India is not a monolithic territory. It is a continent of diverse languages, regional loyalties, joint family economic dynamics, and unmatched digital leapfrogging. Here is how breakthrough brands navigate Bharat."
       />
 
