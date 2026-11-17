@@ -1,9 +1,9 @@
-const isGithubActions = process.env.GITHUB_ACTIONS || false;
+const isGithubPages = process.env.GITHUB_PAGES === 'true' || process.env.GITHUB_ACTIONS === 'true';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: isGithubActions ? '/marketecture' : '',
+  basePath: isGithubPages ? '/marketecture' : '',
   trailingSlash: true,
   images: {
     unoptimized: true,
