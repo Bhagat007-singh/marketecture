@@ -2345,7 +2345,7 @@ export default function OverstoryStudioLanding({
           <section className="ovs-sec ovs-faq" data-sec="faq" aria-labelledby={uid + "fq"}>
             <div className="ovs-wrap ovs-faq-grid">
               <div>
-                <Kicker n="06" text={fq.kicker} />
+                <Kicker n={pc ? "06" : "05"} text={fq.kicker} />
                 <span id={uid + "fq"}>
                   <Split text={fq.title} className="ovs-h2" />
                 </span>

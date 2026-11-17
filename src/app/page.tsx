@@ -4,7 +4,6 @@ import OverstoryStudioLanding, {
   OvsQuote,
   OvsCase,
   OvsService,
-  OvsPlan,
   OvsStep,
   OvsLink,
 } from '@/components/ui/overstory-studio-landing';
@@ -183,52 +182,6 @@ const QUOTES: OvsQuote[] = [
   },
 ];
 
-const PLANS: OvsPlan[] = [
-  {
-    name: 'Open Intelligence',
-    price: 0,
-    unit: 'free forever',
-    text: 'Immediate access to all 26 campaign teardowns, framework templates, and strategy breakdowns.',
-    features: [
-      '26+ Detailed case studies',
-      'Kotler 4Ps/STP templates',
-      'AI Marketing Tools directory',
-      'Regular archive updates',
-    ],
-    cta: 'Explore Case Studies',
-  },
-  {
-    name: 'Strategy Audit',
-    price: 499,
-    quarterly: 449,
-    unit: 'fixed',
-    text: 'A comprehensive bespoke teardown of your brand’s positioning, funnel, and creative architecture.',
-    features: [
-      'Full competitor positioning audit',
-      'Custom 4Ps & STP matrix',
-      'Creative hook & copy suggestions',
-      '60-Minute executive walkthrough',
-    ],
-    cta: 'Request Audit',
-    featured: true,
-    badge: 'Most Popular',
-  },
-  {
-    name: 'Advisory Pod',
-    price: 1999,
-    quarterly: 1799,
-    unit: '/mo',
-    text: 'Embedded strategic marketing counsel for high-growth consumer and D2C brands.',
-    features: [
-      'Monthly campaign strategy sprint',
-      'Weekly creative review & feedback',
-      'Direct Slack / WhatsApp channel',
-      'Growth & distribution architecture',
-    ],
-    cta: 'Talk to Us',
-  },
-];
-
 const FAQ_ITEMS = [
   {
     q: 'What makes Marketecture different from other marketing blogs?',
@@ -320,13 +273,7 @@ export default function HomePage() {
         steps: STEPS,
       }}
       quotes={QUOTES}
-      pricing={{
-        kicker: 'Access & Advisory Tiers',
-        title: 'Open intelligence for marketers, strategists, and agencies.',
-        text: 'All core campaign case studies and theoretical playbooks are 100% free and open to everyone forever.',
-        plans: PLANS,
-        quarterlyNote: 'Save 10%',
-      }}
+      pricing={null}
       faq={{
         kicker: 'Knowledge Base FAQ',
         title: 'Everything you need to know about Marketecture.',
