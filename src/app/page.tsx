@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import HomeHero from '@/components/hero/HomeHero';
 import FeatureStrip from '@/components/hero/FeatureStrip';
 import FeaturedAndPopular from '@/components/editorial/FeaturedAndPopular';
+import CampaignFolderVault from '@/components/campaigns/CampaignFolderVault';
 import IndianSpotlight from '@/components/editorial/IndianSpotlight';
 import GlobalSpotlight from '@/components/editorial/GlobalSpotlight';
 import IndiaVsGlobalPreview from '@/components/editorial/IndiaVsGlobalPreview';
@@ -29,6 +30,9 @@ export default function HomePage() {
 
       {/* 3. Featured Campaign (Zomato) + Popular Sections (Knowledge, Strategy, AI Desk) */}
       <FeaturedAndPopular />
+
+      {/* 3.5. Interactive Glass Folder Campaign Vaults */}
+      <CampaignFolderVault />
 
       {/* 4. Indian Marketing Spotlight */}
       <IndianSpotlight />

@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { Metadata } from 'next';
 import PageHero from '@/components/ui/PageHero';
+import CampaignFolderVault from '@/components/campaigns/CampaignFolderVault';
 import CampaignGrid from '@/components/campaigns/CampaignGrid';
 import { getPosts, wpPostToCampaign } from '@/lib/wordpress';
 import { Campaign } from '@/lib/types';
@@ -29,6 +30,9 @@ export default async function CampaignsPage() {
         title="The Thinking Behind the Work."
         description="Go beyond aesthetic admiration. We deconstruct the business challenge, target consumer insight, creative platform, channel mix, verified outcomes, and enduring strategic lessons behind seminal marketing campaigns."
       />
+
+      {/* Interactive Glass Folder Campaign Vaults */}
+      <CampaignFolderVault />
 
       <section className="py-20">
         <div className="editorial-container">
