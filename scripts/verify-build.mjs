@@ -240,8 +240,11 @@ function resolveImageToDisk(src, publicDir, outDir) {
     // ignore decode error
   }
 
-  // Remove leading slash
-  const relativeSrc = cleanSrc.replace(/^\//, '');
+  // Remove leading slash and basePath prefix if present
+  let relativeSrc = cleanSrc.replace(/^\//, '');
+  if (relativeSrc.startsWith('marketecture/')) {
+    relativeSrc = relativeSrc.replace(/^marketecture\//, '');
+  }
 
   const inPublic = path.join(publicDir, relativeSrc);
   const inOut = path.join(outDir, relativeSrc);
