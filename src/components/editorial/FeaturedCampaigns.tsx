@@ -48,6 +48,27 @@ const campaigns: CampaignCard[] = [
     excerpt:
       'From a simple motivational line to the world\'s most powerful brand platform spanning four decades.',
   },
+  {
+    title: 'Zepto: Marketing Speed in India’s Quick-Commerce Market',
+    slug: 'zepto-quick-commerce-speed',
+    category: 'Indian Campaigns',
+    excerpt:
+      '10-minute delivery economics, viral Manyavar wedding hoardings, and building routine habits from emergency needs.',
+  },
+  {
+    title: 'boAt: Building a Youth-Centred Lifestyle Audio Brand',
+    slug: 'boat-youth-lifestyle-audio',
+    category: 'Indian Campaigns',
+    excerpt:
+      'How boAt turned functional audio into personal style and youth identity through music, sports, and 360M+ campaign impressions.',
+  },
+  {
+    title: 'Inshorts: Turning News Brevity into a Digital Product',
+    slug: 'inshorts-news-brevity-product',
+    category: 'Indian Campaigns',
+    excerpt:
+      'Radical 60-word story constraints, swipeable mobile UX, and high-CTR native advertising architecture.',
+  },
 ];
 
 const containerVariants = {

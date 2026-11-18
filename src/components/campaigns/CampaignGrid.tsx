@@ -83,6 +83,36 @@ const fallbackCampaigns: Campaign[] = [
     date: '2024-02-14T00:00:00',
     category: 'Global Campaigns',
   },
+  {
+    id: 107,
+    slug: 'boat-youth-lifestyle-audio',
+    title: 'boAt: Building a Youth-Centred Lifestyle Audio Brand',
+    excerpt:
+      'How boAt transformed functional audio accessories into a youth lifestyle symbol, combining accessible pricing, celebrity associations, and 360M+ campaign impressions.',
+    content: '',
+    date: '2024-04-10T00:00:00',
+    category: 'Indian Campaigns',
+  },
+  {
+    id: 108,
+    slug: 'zepto-quick-commerce-speed',
+    title: 'Zepto: Marketing Speed in India’s Quick-Commerce Market',
+    excerpt:
+      'How Zepto carved an undisputed 10-minute delivery proposition in India’s crowded online grocery market through dark-store density, viral street hoardings, and cultural agility.',
+    content: '',
+    date: '2024-04-12T00:00:00',
+    category: 'Indian Campaigns',
+  },
+  {
+    id: 109,
+    slug: 'inshorts-news-brevity-product',
+    title: 'Inshorts: Turning News Brevity into a Digital Product',
+    excerpt:
+      'How three college students built India’s most distinctive news app by constraining every story to 60 words, creating an addictive swipeable habit loop and native ad engine.',
+    content: '',
+    date: '2024-04-15T00:00:00',
+    category: 'Indian Campaigns',
+  },
 ];
 
 const categories = [

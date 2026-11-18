@@ -12,28 +12,40 @@ const indianCampaignFiles: FolderFile[] = [
     href: '/campaigns/blinkit-quick-commerce-topical-marketing',
   },
   {
+    name: 'Zepto: 10-Minute Speed & Wedding Billboard',
+    meta: 'Quick Commerce SLA & Social OOH',
+    art: 'dusk',
+    href: '/campaigns/zepto-quick-commerce-speed',
+  },
+  {
+    name: 'Inshorts: 60-Word News Brevity as Product',
+    meta: 'Brevity Product & Native Ads',
+    art: 'glacier',
+    href: '/campaigns/inshorts-news-brevity-product',
+  },
+  {
+    name: 'boAt Lifestyle: D2C Audio Community',
+    meta: 'Wearables & Youth Tribe',
+    art: 'aurora',
+    href: '/campaigns/boat-youth-lifestyle-audio',
+  },
+  {
     name: 'Zomato: Conversational Tone & Push CRM',
     meta: 'CRM & Viral Memes',
     art: 'ember',
     href: '/campaigns/zomato-social-media-humour',
   },
   {
-    name: 'Amul Girl: 50+ Years of Topical Hoardings',
+    name: 'Amul Girl: 58+ Years of Topical Hoardings',
     meta: 'OOH & News Commentary',
     art: 'verdant',
     href: '/campaigns/amul-girl-topical-advertising',
   },
   {
     name: 'Paper Boat: Childhood Nostalgia Branding',
-    meta: 'Beverage Packaging',
+    meta: 'Beverage Packaging Storytelling',
     art: 'dusk',
     href: '/campaigns/paper-boat-nostalgia-marketing',
-  },
-  {
-    name: 'boAt Lifestyle: D2C Audio Community',
-    meta: 'Wearables & Youth Tribe',
-    art: 'aurora',
-    href: '/campaigns?category=indian',
   },
 ];
 
@@ -61,6 +73,45 @@ const globalCampaignFiles: FolderFile[] = [
     meta: 'Emotional Brand Purpose',
     art: 'dusk',
     href: '/campaigns?category=global',
+  },
+];
+
+const galleryCampaignFiles: FolderFile[] = [
+  {
+    name: 'Blinkit × Zomato: "Doodh / Kheer" Billboards',
+    meta: 'Viral Street Hoardings (Gurugram)',
+    art: 'ember',
+    href: '/campaigns/blinkit-quick-commerce-topical-marketing',
+  },
+  {
+    name: 'Amul Girl: 4,000+ Topical Hoardings Archive',
+    meta: '58 Years of Satirical Cartoons',
+    art: 'verdant',
+    href: '/campaigns/amul-girl-topical-advertising',
+  },
+  {
+    name: 'Zepto × Manyavar: "10-Min Dulha" Billboard',
+    meta: 'Social-to-OOH Real-Time Stunt',
+    art: 'dusk',
+    href: '/campaigns/zepto-quick-commerce-speed',
+  },
+  {
+    name: 'boAt: "Lost in Nirvana" & RCB Campaign',
+    meta: 'Lifestyle & Celebrity Audio Ads',
+    art: 'aurora',
+    href: '/campaigns/boat-youth-lifestyle-audio',
+  },
+  {
+    name: 'Inshorts: 60-Word Native Ad Cards',
+    meta: 'Clean Editorial Ad Architecture',
+    art: 'glacier',
+    href: '/campaigns/inshorts-news-brevity-product',
+  },
+  {
+    name: 'Share a Coke: Named Packaging Showcase',
+    meta: 'Global Pack-as-Media Visuals',
+    art: 'ember',
+    href: '/campaigns/share-a-coke-personalisation',
   },
 ];
 
@@ -123,15 +174,16 @@ export default function CampaignFolderVault() {
           </p>
         </div>
 
-        {/* 3 Interactive Glass Folders Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8 justify-items-center items-end">
+        {/* 4 Interactive Glass Folders Row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-6 justify-items-center items-end">
           {/* Folder 1: Indian Campaigns */}
           <div className="flex flex-col items-center">
             <GlassFolder
               label="Indian Campaigns"
-              meta="5 Case Studies"
+              meta="7 Case Studies"
               tone="dark"
               art="ember"
+              width={290}
               seed={5}
               action="more"
               labelPlacement="bottom-left"
@@ -140,7 +192,9 @@ export default function CampaignFolderVault() {
               menu={[
                 { label: 'View Indian Hub', onSelect: () => window.location.assign('/indian-marketing') },
                 { label: 'Explore Blinkit Study', onSelect: () => window.location.assign('/campaigns/blinkit-quick-commerce-topical-marketing') },
-                { label: 'Explore Zomato Study', onSelect: () => window.location.assign('/campaigns/zomato-social-media-humour') },
+                { label: 'Explore Zepto Study', onSelect: () => window.location.assign('/campaigns/zepto-quick-commerce-speed') },
+                { label: 'Explore boAt Study', onSelect: () => window.location.assign('/campaigns/boat-youth-lifestyle-audio') },
+                { label: 'Explore Inshorts Study', onSelect: () => window.location.assign('/campaigns/inshorts-news-brevity-product') },
               ]}
             />
             <div className="mt-4 text-center">
@@ -154,9 +208,10 @@ export default function CampaignFolderVault() {
           <div className="flex flex-col items-center">
             <GlassFolder
               label="Global Campaigns"
-              meta="4 Platforms"
+              meta="4 Case Studies"
               tone="dark"
               art="aurora"
+              width={290}
               seed={17}
               action="more"
               labelPlacement="bottom-left"
@@ -165,6 +220,8 @@ export default function CampaignFolderVault() {
               menu={[
                 { label: 'View Global Hub', onSelect: () => window.location.assign('/global-marketing') },
                 { label: 'Explore Nike Study', onSelect: () => window.location.assign('/campaigns/nike-just-do-it-evolution') },
+                { label: 'Explore Share a Coke', onSelect: () => window.location.assign('/campaigns/share-a-coke-personalisation') },
+                { label: 'Explore Apple Study', onSelect: () => window.location.assign('/campaigns/apple-think-different-comeback') },
               ]}
             />
             <div className="mt-4 text-center">
@@ -181,6 +238,7 @@ export default function CampaignFolderVault() {
               meta="4 Frameworks"
               tone="dark"
               art="dusk"
+              width={290}
               seed={23}
               action="more"
               labelPlacement="bottom-left"
@@ -194,6 +252,33 @@ export default function CampaignFolderVault() {
             <div className="mt-4 text-center">
               <span className="text-xs font-heading font-bold text-[#F28C38] tracking-wider uppercase">
                 Kotlerian &amp; Modern Frameworks
+              </span>
+            </div>
+          </div>
+
+          {/* Folder 4: Creative & Ad Gallery */}
+          <div className="flex flex-col items-center">
+            <GlassFolder
+              label="Creative Gallery"
+              meta="6 Ad Showcases"
+              tone="dark"
+              art="verdant"
+              width={290}
+              seed={31}
+              action="more"
+              labelPlacement="bottom-left"
+              appearDelay={420}
+              files={galleryCampaignFiles}
+              menu={[
+                { label: 'View All Campaigns', onSelect: () => window.location.assign('/campaigns') },
+                { label: 'Blinkit × Zomato Hoardings', onSelect: () => window.location.assign('/campaigns/blinkit-quick-commerce-topical-marketing') },
+                { label: 'Amul Topical Cartoon Archive', onSelect: () => window.location.assign('/campaigns/amul-girl-topical-advertising') },
+                { label: 'boAt Lost in Nirvana Creative', onSelect: () => window.location.assign('/campaigns/boat-youth-lifestyle-audio') },
+              ]}
+            />
+            <div className="mt-4 text-center">
+              <span className="text-xs font-heading font-bold text-[#F28C38] tracking-wider uppercase">
+                Ad Archive &amp; Hoardings
               </span>
             </div>
           </div>

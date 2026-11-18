@@ -102,6 +102,39 @@ const CASE_STUDIES: CaseStudyItem[] = [
       'Hector Beverages bypassed the multinational soda giants by bottling traditional Indian summer memories in tactile, poetic pouches.',
     keywords: ['paper boat', 'nostalgia', 'childhood', 'drinks', 'packaging', 'pouch', 'beverages', 'storytelling', 'indian'],
   },
+  {
+    brand: 'boAt',
+    logo: '/images/brand-logos/uploaded-logo.png',
+    title: 'Building a Youth-Centred Lifestyle Audio Brand',
+    slug: '/campaigns/boat-youth-lifestyle-audio',
+    tag: 'Consumer Tech • D2C Audio',
+    metric: '360M+ Impressions • India #1 Audio',
+    snippet:
+      'How Aman Gupta and boAt turned sterile audio gear into a badge of streetwear and youth identity, building a community of millions of boAtheads.',
+    keywords: ['boat', 'audio', 'headphones', 'earphones', 'lifestyle', 'd2c', 'cricket', 'rcb', 'lost in nirvana', 'indian', 'youth'],
+  },
+  {
+    brand: 'Zepto',
+    logo: '/images/brand-logos/blinkit.png',
+    title: 'Marketing Speed in India’s Quick-Commerce Market',
+    slug: '/campaigns/zepto-quick-commerce-speed',
+    tag: 'Quick Commerce • Urban Logistics',
+    metric: '10-Min Delivery • 2.4x Conversion Growth',
+    snippet:
+      'How Zepto turned grocery speed into an uncompromising consumer habit through dark-store proximity and viral social-to-billboard cultural stunts.',
+    keywords: ['zepto', 'speed', 'quick commerce', 'delivery', 'dark store', 'manyavar', 'wedding', 'grocery', 'indian'],
+  },
+  {
+    brand: 'Inshorts',
+    logo: '/images/brand-logos/apple.png',
+    title: 'Turning News Brevity into a Digital Product',
+    slug: '/campaigns/inshorts-news-brevity-product',
+    tag: 'Digital Media • Product-Led UX',
+    metric: '60 Words • 10M+ Public App Users',
+    snippet:
+      'How three IIT students transformed mobile news consumption by constraining every story to 60 words, creating an addictive swipeable habit loop and native ad engine.',
+    keywords: ['inshorts', 'news', 'brevity', '60 words', 'native ads', 'media', 'swipe', 'public app', 'indian'],
+  },
 ];
 
 const PRESET_QUERIES = [
@@ -199,6 +232,39 @@ export default function AIDeskFeature() {
 - **Primary Growth Levers**: Values-first emotional brand platforms (Think Different) paired with closed hardware-software ecosystem integration, minimalist product design, and architectural flagship stores.
 - **Competitive Moat**: Unmatched pricing power, customer lifetime loyalty, and an aspirational status symbol that transcends functional computing.
         `;
+      } else if (brand.toLowerCase().includes('boat')) {
+        analysis = `
+### 🎧 Brand Architecture: **boAt**
+- **Core Cultural Tension**: Personal audio was dominated by expensive global brands speaking in technical jargon (driver size, impedance) or cheap, fragile grey-market earphones.
+- **Kotlerian STP Positioning**:
+  - *Segment*: College students, young professionals, and Gen-Z music lovers aged 16–28.
+  - *Target*: Youth seeking premium-looking bass-heavy tech accessories under ₹2,000.
+  - *Positioning*: "Make Personal Technology Part of Youth Identity — The boAthead Lifestyle".
+- **Primary Growth Levers**: Music & sports culture alignments ('Lost in Nirvana' with 360M+ impressions, RCB IPL gamification with 78M impressions), youth celebrity endorsers (Hardik Pandya, Kiara Advani), and overwhelming marketplace review moats on Amazon and Flipkart.
+- **Competitive Moat**: Community affinity and volume leadership in Indian earwear, combined with rapid product design turnaround and low consumer price resistance.
+        `;
+      } else if (brand.toLowerCase().includes('zepto')) {
+        analysis = `
+### ⚡ Brand Architecture: **Zepto**
+- **Core Cultural Tension**: Planning grocery runs or waiting 24–48 hours for e-commerce deliveries causes severe household friction during emergency shortage moments.
+- **Kotlerian STP Positioning**:
+  - *Segment*: Busy double-income couples, students, and urban households in top metros.
+  - *Target*: High-urgency shoppers who prioritize immediate convenience over minor price discounts.
+  - *Positioning*: "Speed is the Promise, Convenience is the Habit — 10 Minutes Flat".
+- **Primary Growth Levers**: Dark store proximity (sub-2km delivery radius), 90-second picking SLAs, and viral real-time cultural OOH hoardings (e.g. Manyavar wedding billboard generating 250+ brand reactions in 24 hours).
+- **Competitive Moat**: Micro-warehouse spatial density and hyper-optimized route density per square kilometer that competitors cannot easily duplicate without massive capex.
+        `;
+      } else if (brand.toLowerCase().includes('inshorts')) {
+        analysis = `
+### 📰 Brand Architecture: **Inshorts**
+- **Core Cultural Tension**: Infinite social media feeds, long clickbait articles, and cognitive news fatigue overwhelm modern mobile-first readers.
+- **Kotlerian STP Positioning**:
+  - *Segment*: Digitally native youth, competitive exam aspirants, and corporate professionals.
+  - *Target*: Time-poor individuals who want to stay informed in under 3 minutes per day.
+  - *Positioning*: "A Quick News Format Built for Mobile Attention — 60 Words, One Story".
+  - *Primary Growth Levers*: Product-led UX virality (swipe-up gesture, clean cards), high-CTR native sponsored cards, and regional video expansion via Public (10M users in 6 months).
+- **Competitive Moat**: Habitual muscle-memory retention (5–10 daily app sessions) paired with a high-margin native advertising inventory that respects reader attention.
+        `;
       } else {
         analysis = `
 ### 🎯 Brand Architecture: **${brand}**
@@ -257,6 +323,51 @@ export default function AIDeskFeature() {
 
 #### 3. Full-Funnel Growth Lever
 - **Gamified Delivery Tracking**: Add witty easter eggs and interactive mini-games to the live delivery tracking map to maximize in-app dwell time.
+        `;
+      } else if (brand.toLowerCase().includes('boat')) {
+        tips = `
+### 🎧 Actionable Marketing Playbook & Viral Hooks for **boAt**
+
+#### 1. Push Notification & Product Hooks
+- **Workout / Gym Drop**: *"Playlist ready hai, bass tumhare earphones charge nahi hain. Plug into Nirvana in 5 mins."*
+- **Cricket Season**: *"Match tight hai, commentary clear honi chahiye. Switch to boAt ANC."*
+- **New Drop Alert**: *"Bass itna deep, padosi bhi vibe karein. Meet the new Airdopes."*
+
+#### 2. Creator & Streetwear Campaigns
+- **Audio OOTD**: Partner with streetwear micro-creators to feature boAt headphones as color-matched accessories in fashion reels.
+- **Gym Battle Campaign**: Challenge fitness creators to drop-test earbuds during extreme workouts, highlighting sweat-proof durability.
+
+#### 3. Community Engagement Flywheel
+- **#boAthead Fan Hall of Fame**: Repost top consumer unboxings to official brand channels with humorous commentary from co-founder Aman Gupta.
+        `;
+      } else if (brand.toLowerCase().includes('zepto')) {
+        tips = `
+### ⚡ Actionable Marketing Playbook & Viral Hooks for **Zepto**
+
+#### 1. Push Notification Hooks (Emergency & Micro-Habits)
+- **Late-Night Craving**: *"Ice cream khatam, mood kharab? Zepto rider reaching in 8 mins."*
+- **Breakfast Panic**: *"Tawa garam ho chuka hai, par butter nahi hai? Order on Zepto, deliver before bread is toasted."*
+- **Work from Home Stress**: *"Coffee packet empty during zoom call? We are on your floor before the meeting ends."*
+
+#### 2. Street-Smart Billboard Hooks
+- **Metro Exit Hoarding**: *"Traffic will take 45 mins. Your cold drinks reached home 35 mins ago."*
+- **Collab Banter**: Partner with local salons and bakeries with witty two-brand hoardings: *"They make you look good, we bring the tissues in 10 mins."*
+
+#### 3. Retention Habit Architecture
+- **Automatic 3-Day Milk/Bread Replenishment**: Nudge 1-click reorder notifications at 6:45 AM based on consumption cadence.
+        `;
+      } else if (brand.toLowerCase().includes('inshorts')) {
+        tips = `
+### 📰 Actionable Marketing Playbook & Viral Hooks for **Inshorts**
+
+#### 1. Engagement & Lock-Screen Hooks
+- **Morning Coffee Brevity**: *"60 seconds. 5 major global stories. Be the smartest person in your 10 AM standup."*
+- **Breaking News Card**: *"Big policy shift just happened. Here are the 60 words that actually matter."*
+- **Evening Wind-Down**: *"No drama, no shouting anchors. Just the day's facts before you sleep."*
+
+#### 2. Native Advertising Best Practices
+- **Sponsored Card Formula**: Match editorial tone: 1 crisp problem hook + 3 bulleted factual advantages + 1 subtle CTA link to source.
+- **WhatsApp Share Optimization**: Add 1-click formatted text copy with attribution for instant forwarding in family and work groups.
         `;
       } else {
         tips = `
@@ -320,6 +431,8 @@ export default function AIDeskFeature() {
               { name: 'Zomato', logo: '/images/brand-logos/zomato.png' },
               { name: 'Amul', logo: '/images/brand-logos/amul.jpg' },
               { name: 'Apple', logo: '/images/brand-logos/apple.png' },
+              { name: 'boAt', logo: '/images/brand-logos/uploaded-logo.png' },
+              { name: 'Zepto', logo: '/images/brand-logos/blinkit.png' },
             ].map((b) => (
               <button
                 key={b.name}

@@ -138,11 +138,58 @@ export default function CampaignArticle({
           </div>
 
           {/* Editorial Disclaimer Banner */}
-          <div className="p-6 bg-white border-l-4 border-orange rounded-sm border-t border-r border-b border-navy/10 mb-16 text-xs text-muted leading-relaxed">
+          <div className="p-6 bg-white border-l-4 border-orange rounded-sm border-t border-r border-b border-navy/10 mb-12 text-xs text-muted leading-relaxed">
             <strong className="text-navy font-heading block mb-1">
               Editorial Rigor &amp; Attribution Policy
             </strong>
             Marketecture maintains a strict editorial distinction between verified, officially reported campaign metrics (such as audited quarterly filings, Effie case entries, or verified Nielsen data) and editorial strategic interpretation. Performance numbers are never simulated or fabricated.
+          </div>
+
+          {/* Related Case Studies Cross-Links Grid */}
+          <div className="mb-16 pt-8 border-t border-navy/10">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="font-heading font-bold text-xl text-navy">
+                Related Case Studies &amp; Playbooks
+              </h3>
+              <Link href="/campaigns" className="text-xs font-heading font-semibold text-orange hover:underline">
+                View all 10 teardowns →
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { slug: 'blinkit-quick-commerce-topical-marketing', title: 'Blinkit: 10-Minute Delivery & Viral Billboards', tag: 'Quick Commerce' },
+                { slug: 'zepto-quick-commerce-speed', title: 'Zepto: Marketing Speed in Quick Commerce', tag: 'Hyperlocal Logistics' },
+                { slug: 'zomato-social-media-humour', title: 'Zomato: Conversational Humour & Push CRM', tag: 'Food Tech' },
+                { slug: 'boat-youth-lifestyle-audio', title: 'boAt: Youth-Centred Lifestyle Audio', tag: 'D2C Hardware' },
+                { slug: 'inshorts-news-brevity-product', title: 'Inshorts: 60-Word News Brevity as Product', tag: 'Product UX' },
+                { slug: 'amul-girl-topical-advertising', title: 'Amul Girl: 58+ Years of Topical Hoardings', tag: 'Topical FMCG' },
+                { slug: 'share-a-coke-personalisation', title: 'Share a Coke: Packaging as Media Channel', tag: 'Global Personalisation' },
+                { slug: 'apple-think-different-comeback', title: 'Apple: "Think Different" 1997 Comeback', tag: 'Brand Positioning' },
+                { slug: 'nike-just-do-it-evolution', title: 'Nike: 35-Year Evolution of Just Do It', tag: 'Global Ethos' },
+                { slug: 'paper-boat-nostalgia-marketing', title: 'Paper Boat: Childhood Nostalgia Branding', tag: 'Sensory Storytelling' },
+              ]
+                .filter((item) => item.slug !== slug)
+                .slice(0, 3)
+                .map((item) => (
+                  <Link
+                    key={item.slug}
+                    href={`/campaigns/${item.slug}`}
+                    className="group flex flex-col justify-between p-4 bg-white rounded-lg border border-navy/10 hover:border-orange/40 hover:shadow-md transition-all"
+                  >
+                    <div>
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-orange font-semibold block mb-1">
+                        {item.tag}
+                      </span>
+                      <h4 className="text-sm font-heading font-bold text-navy group-hover:text-orange transition-colors line-clamp-2">
+                        {item.title}
+                      </h4>
+                    </div>
+                    <span className="mt-4 text-xs font-semibold text-muted group-hover:text-navy flex items-center gap-1 transition-colors">
+                      Read Teardown <ArrowLeft className="w-3 h-3 rotate-180" />
+                    </span>
+                  </Link>
+                ))}
+            </div>
           </div>
 
           {/* Bottom Navigation */}

@@ -1488,11 +1488,13 @@ export default function OverstoryStudioLanding({
   }, [])
 
   const go = React.useCallback((href?: string) => (e?: React.MouseEvent) => {
-    if (!href || !href.startsWith("#") || href.length < 2) return
-    const el = root.current?.querySelector('[data-sec="' + href.slice(1) + '"]')
+    if (!href) return
+    setMenu(false)
+    if (!href.startsWith("#") || href.length < 2) return
+    const target = href.slice(1)
+    const el = root.current?.querySelector('[data-sec="' + target + '"]') || document.getElementById(target)
     if (!el) return
     e?.preventDefault()
-    setMenu(false)
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     el.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" })
   }, [])
