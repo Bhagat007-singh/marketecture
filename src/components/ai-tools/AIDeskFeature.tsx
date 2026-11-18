@@ -38,7 +38,7 @@ const getAssetPath = (url: string) => {
 const CASE_STUDIES: CaseStudyItem[] = [
   {
     brand: 'Blinkit',
-    logo: '/images/brand-logos/blinkit.png',
+    logo: '/images/brand-logos/blinkit.svg',
     title: '10-Minute Delivery & Viral Billboard Banter',
     slug: '/campaigns/blinkit-quick-commerce-topical-marketing',
     tag: 'Quick Commerce • Indian',
@@ -49,7 +49,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
   },
   {
     brand: 'Zomato',
-    logo: '/images/brand-logos/zomato.png',
+    logo: '/images/brand-logos/zomato.svg',
     title: 'Conversational Humour & Push Notification Dominance',
     slug: '/campaigns/zomato-social-media-humour',
     tag: 'Food Tech • Indian Viral Growth',
@@ -60,7 +60,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
   },
   {
     brand: 'Amul',
-    logo: '/images/brand-logos/amul.jpg',
+    logo: '/images/brand-logos/amul.svg',
     title: 'The Amul Girl: 58+ Years of Topical Hoardings',
     slug: '/campaigns/amul-girl-topical-advertising',
     tag: 'Dairy FMCG • Cultural Icon',
@@ -71,7 +71,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
   },
   {
     brand: 'Apple',
-    logo: '/images/brand-logos/apple.png',
+    logo: '/images/brand-logos/apple.svg',
     title: '"Think Different" & The Alchemy of Brand Salvation',
     slug: '/campaigns/apple-think-different-comeback',
     tag: 'Consumer Tech • Global Comeback',
@@ -82,7 +82,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
   },
   {
     brand: 'Nike',
-    logo: '/images/brand-logos/apple.png', // Fallback or logo
+    logo: '/images/brand-logos/nike.svg',
     title: 'The 35-Year Evolution of "Just Do It"',
     slug: '/campaigns/nike-just-do-it-evolution',
     tag: 'Athletics • Global Ethos',
@@ -93,7 +93,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
   },
   {
     brand: 'Paper Boat',
-    logo: '/images/brand-logos/zomato.png',
+    logo: '/images/brand-logos/paper-boat.svg',
     title: 'Sensory Memory & Childhood Nostalgia Branding',
     slug: '/campaigns/paper-boat-nostalgia-marketing',
     tag: 'Beverage FMCG • Indian D2C',
@@ -104,7 +104,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
   },
   {
     brand: 'boAt',
-    logo: '/images/brand-logos/uploaded-logo.png',
+    logo: '/images/brand-logos/boat.svg',
     title: 'Building a Youth-Centred Lifestyle Audio Brand',
     slug: '/campaigns/boat-youth-lifestyle-audio',
     tag: 'Consumer Tech • D2C Audio',
@@ -115,7 +115,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
   },
   {
     brand: 'Zepto',
-    logo: '/images/brand-logos/blinkit.png',
+    logo: '/images/brand-logos/zepto.svg',
     title: 'Marketing Speed in India’s Quick-Commerce Market',
     slug: '/campaigns/zepto-quick-commerce-speed',
     tag: 'Quick Commerce • Urban Logistics',
@@ -126,7 +126,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
   },
   {
     brand: 'Inshorts',
-    logo: '/images/brand-logos/apple.png',
+    logo: '/images/brand-logos/inshorts.svg',
     title: 'Turning News Brevity into a Digital Product',
     slug: '/campaigns/inshorts-news-brevity-product',
     tag: 'Digital Media • Product-Led UX',
@@ -134,6 +134,17 @@ const CASE_STUDIES: CaseStudyItem[] = [
     snippet:
       'How three IIT students transformed mobile news consumption by constraining every story to 60 words, creating an addictive swipeable habit loop and native ad engine.',
     keywords: ['inshorts', 'news', 'brevity', '60 words', 'native ads', 'media', 'swipe', 'public app', 'indian'],
+  },
+  {
+    brand: 'Coca-Cola',
+    logo: '/images/brand-logos/coca-cola.svg',
+    title: 'Share a Coke: Personalisation as Global Brand Experience',
+    slug: '/campaigns/share-a-coke-personalisation',
+    tag: 'Global FMCG • Packaging as Media',
+    metric: '500K+ Photos • +7% Teen Consumption',
+    snippet:
+      'By replacing its iconic Spencerian logo with everyday names, Coca-Cola turned the package itself into a high-engagement, shareable social object.',
+    keywords: ['coca-cola', 'coke', 'share a coke', 'personalisation', 'packaging', 'fmcg', 'global'],
   },
 ];
 
@@ -427,12 +438,15 @@ export default function AIDeskFeature() {
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-xs text-gray-400 font-mono">Analyzed Brands:</span>
             {[
-              { name: 'Blinkit', logo: '/images/brand-logos/blinkit.png' },
-              { name: 'Zomato', logo: '/images/brand-logos/zomato.png' },
-              { name: 'Amul', logo: '/images/brand-logos/amul.jpg' },
-              { name: 'Apple', logo: '/images/brand-logos/apple.png' },
-              { name: 'boAt', logo: '/images/brand-logos/uploaded-logo.png' },
-              { name: 'Zepto', logo: '/images/brand-logos/blinkit.png' },
+              { name: 'Blinkit', logo: '/images/brand-logos/blinkit.svg' },
+              { name: 'Zomato', logo: '/images/brand-logos/zomato.svg' },
+              { name: 'Amul', logo: '/images/brand-logos/amul.svg' },
+              { name: 'Apple', logo: '/images/brand-logos/apple.svg' },
+              { name: 'Nike', logo: '/images/brand-logos/nike.svg' },
+              { name: 'Paper Boat', logo: '/images/brand-logos/paper-boat.svg' },
+              { name: 'boAt', logo: '/images/brand-logos/boat.svg' },
+              { name: 'Zepto', logo: '/images/brand-logos/zepto.svg' },
+              { name: 'Inshorts', logo: '/images/brand-logos/inshorts.svg' },
             ].map((b) => (
               <button
                 key={b.name}

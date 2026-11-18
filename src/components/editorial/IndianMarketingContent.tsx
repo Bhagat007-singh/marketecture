@@ -62,24 +62,28 @@ const pillars = [
 const featuredBrands = [
   {
     name: 'Amul',
+    slug: 'amul-girl-topical-advertising',
     established: '1946 (Anand, Gujarat)',
     model: 'Cooperative Farmer Economy',
     positioning: '"The Taste of India" — Topical socio-cultural commentary rooted in national pride.',
   },
   {
     name: 'Paper Boat',
+    slug: 'paper-boat-nostalgia-marketing',
     established: '2013 (Bengaluru)',
     model: 'D2C & Omnichannel Beverage',
     positioning: 'Sensory nostalgia: liquid childhood memories packaged in modern tactile art.',
   },
   {
     name: 'boAt Lifestyle',
+    slug: 'boat-youth-lifestyle-audio',
     established: '2016 (New Delhi)',
     model: 'Consumer Tech / Wearables',
     positioning: 'Democratising Gen-Z audio aspiration through Bollywood & cricket youth ambassadors.',
   },
   {
     name: 'Zomato',
+    slug: 'zomato-social-media-humour',
     established: '2008 (Gurugram)',
     model: 'Quick Commerce & Food Tech',
     positioning: 'Irreverent, witty pop-culture companion speaking the authentic language of foodies.',
@@ -158,13 +162,15 @@ export default function IndianMarketingContent() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {featuredBrands.map((brand) => (
-            <div
+            <Link
               key={brand.name}
-              className="bg-navy-light/40 border border-white/10 p-6 rounded-sm hover:border-orange/50 transition-colors"
+              href={`/campaigns/${brand.slug}`}
+              className="group bg-navy-light/40 border border-white/10 hover:border-orange/60 p-6 rounded-sm transition-all duration-300 block"
             >
               <div className="flex items-center justify-between mb-3">
-                <h3 className="text-2xl font-heading font-bold text-ivory">
-                  {brand.name}
+                <h3 className="text-2xl font-heading font-bold text-ivory group-hover:text-orange transition-colors flex items-center gap-2">
+                  <span>{brand.name}</span>
+                  <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all text-orange" />
                 </h3>
                 <span className="text-[11px] font-mono text-orange">
                   {brand.established}
@@ -177,7 +183,11 @@ export default function IndianMarketingContent() {
                 <strong className="text-orange block mb-1">Positioning Insight:</strong>
                 {brand.positioning}
               </p>
-            </div>
+              <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-heading font-semibold text-orange">
+                <span>Read Full 13-Point Teardown</span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </Link>
           ))}
         </div>
 
@@ -185,7 +195,7 @@ export default function IndianMarketingContent() {
           <p className="text-xs text-muted">
             Explore deep-dive 13-point breakdowns of individual Indian campaigns.
           </p>
-          <Link href="/campaigns" className="btn-primary text-xs py-3 px-6 whitespace-nowrap">
+          <Link href="/campaigns?category=indian" className="btn-primary text-xs py-3 px-6 whitespace-nowrap">
             View Indian Case Studies in Archive →
           </Link>
         </div>

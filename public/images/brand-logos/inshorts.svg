@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 55" fill="none">
+  <!-- Inshorts Origami Polygon Mark -->
+  <g transform="translate(6, 6)">
+    <path d="M20 2L4 18H20V2Z" fill="#E53935"/>
+    <path d="M20 2L36 18H20V2Z" fill="#C62828"/>
+    <path d="M4 18L20 38L20 18H4Z" fill="#EF5350"/>
+    <path d="M36 18L20 38L20 18H36Z" fill="#D32F2F"/>
+    <path d="M14 18H26V24H14V18Z" fill="#FFFFFF"/>
+  </g>
+  <!-- inshorts typography -->
+  <text x="52" y="32" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="26" fill="#FFFFFF" letter-spacing="-0.5">in<tspan fill="#E53935">shorts</tspan></text>
+  <text x="53" y="43" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="8" fill="#CBD5E1" letter-spacing="2">60 WORDS</text>
+</svg>

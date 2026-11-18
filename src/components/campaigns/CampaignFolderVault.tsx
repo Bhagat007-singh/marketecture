@@ -4,47 +4,60 @@ import Link from 'next/link';
 import GlassFolder, { FolderFile } from '@/components/ui/glass-folder-cards';
 import { ArrowRight, Sparkles, FolderArchive } from 'lucide-react';
 
+const navigate = (path: string) => {
+  if (typeof window === 'undefined') return;
+  const base = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  window.location.assign(`${base}${path.startsWith('/') ? path : '/' + path}`);
+};
+
 const indianCampaignFiles: FolderFile[] = [
   {
     name: 'Blinkit: 10-Min Delivery & Viral Billboards',
     meta: 'Quick Commerce & OOH Memes',
     art: 'ember',
+    image: '/images/vault/card-blinkit.jpg',
     href: '/campaigns/blinkit-quick-commerce-topical-marketing',
   },
   {
     name: 'Zepto: 10-Minute Speed & Wedding Billboard',
     meta: 'Quick Commerce SLA & Social OOH',
     art: 'dusk',
+    image: '/images/vault/card-zepto.jpg',
     href: '/campaigns/zepto-quick-commerce-speed',
   },
   {
     name: 'Inshorts: 60-Word News Brevity as Product',
     meta: 'Brevity Product & Native Ads',
     art: 'glacier',
+    image: '/images/vault/card-inshorts.jpg',
     href: '/campaigns/inshorts-news-brevity-product',
   },
   {
     name: 'boAt Lifestyle: D2C Audio Community',
     meta: 'Wearables & Youth Tribe',
     art: 'aurora',
+    image: '/images/vault/card-boat.jpg',
     href: '/campaigns/boat-youth-lifestyle-audio',
   },
   {
     name: 'Zomato: Conversational Tone & Push CRM',
     meta: 'CRM & Viral Memes',
     art: 'ember',
+    image: '/images/vault/card-zomato.jpg',
     href: '/campaigns/zomato-social-media-humour',
   },
   {
     name: 'Amul Girl: 58+ Years of Topical Hoardings',
     meta: 'OOH & News Commentary',
     art: 'verdant',
+    image: '/images/vault/card-amul.jpg',
     href: '/campaigns/amul-girl-topical-advertising',
   },
   {
     name: 'Paper Boat: Childhood Nostalgia Branding',
     meta: 'Beverage Packaging Storytelling',
     art: 'dusk',
+    image: '/images/vault/card-paperboat.jpg',
     href: '/campaigns/paper-boat-nostalgia-marketing',
   },
 ];
@@ -54,24 +67,28 @@ const globalCampaignFiles: FolderFile[] = [
     name: 'Nike: 35-Year Evolution of Just Do It',
     meta: 'Cultural Ethos & Athletics',
     art: 'aurora',
+    image: '/images/vault/card-nike.jpg',
     href: '/campaigns/nike-just-do-it-evolution',
   },
   {
     name: 'Apple: Think Different 1997 Comeback',
     meta: 'Brand Identity & Comeback',
     art: 'glacier',
+    image: '/images/vault/card-apple.jpg',
     href: '/campaigns/apple-think-different-comeback',
   },
   {
     name: 'Share a Coke: Personalisation Engine',
     meta: 'Global Packaging Activation',
     art: 'ember',
+    image: '/images/vault/card-coke.jpg',
     href: '/campaigns/share-a-coke-personalisation',
   },
   {
     name: 'Dove: Real Beauty & Self-Esteem Project',
     meta: 'Emotional Brand Purpose',
     art: 'dusk',
+    image: '/images/vault/card-dove.jpg',
     href: '/campaigns?category=global',
   },
 ];
@@ -81,36 +98,42 @@ const galleryCampaignFiles: FolderFile[] = [
     name: 'Blinkit × Zomato: "Doodh / Kheer" Billboards',
     meta: 'Viral Street Hoardings (Gurugram)',
     art: 'ember',
+    image: '/images/vault/card-blinkit.jpg',
     href: '/campaigns/blinkit-quick-commerce-topical-marketing',
   },
   {
     name: 'Amul Girl: 4,000+ Topical Hoardings Archive',
     meta: '58 Years of Satirical Cartoons',
     art: 'verdant',
+    image: '/images/vault/card-amul.jpg',
     href: '/campaigns/amul-girl-topical-advertising',
   },
   {
     name: 'Zepto × Manyavar: "10-Min Dulha" Billboard',
     meta: 'Social-to-OOH Real-Time Stunt',
     art: 'dusk',
+    image: '/images/vault/card-zepto.jpg',
     href: '/campaigns/zepto-quick-commerce-speed',
   },
   {
     name: 'boAt: "Lost in Nirvana" & RCB Campaign',
     meta: 'Lifestyle & Celebrity Audio Ads',
     art: 'aurora',
+    image: '/images/vault/card-boat.jpg',
     href: '/campaigns/boat-youth-lifestyle-audio',
   },
   {
     name: 'Inshorts: 60-Word Native Ad Cards',
     meta: 'Clean Editorial Ad Architecture',
     art: 'glacier',
+    image: '/images/vault/card-inshorts.jpg',
     href: '/campaigns/inshorts-news-brevity-product',
   },
   {
     name: 'Share a Coke: Named Packaging Showcase',
     meta: 'Global Pack-as-Media Visuals',
     art: 'ember',
+    image: '/images/vault/card-coke.jpg',
     href: '/campaigns/share-a-coke-personalisation',
   },
 ];
@@ -120,24 +143,28 @@ const strategyFiles: FolderFile[] = [
     name: 'Kotlerian 4Ps & 7Ps Marketing Architecture',
     meta: 'Foundational Marketing Mix',
     art: 'verdant',
+    image: '/images/vault/card-4ps.jpg',
     href: '/knowledge-library?cat=fundamentals',
   },
   {
     name: 'Segmentation, Targeting & Positioning (STP)',
     meta: 'Market Definition & Moats',
     art: 'dusk',
+    image: '/images/vault/card-stp.jpg',
     href: '/knowledge-library?cat=fundamentals',
   },
   {
     name: "Porter's Five Forces Industry Analysis",
     meta: 'Competitive Dynamics Audit',
     art: 'aurora',
+    image: '/images/vault/card-porter.jpg',
     href: '/knowledge-library?cat=fundamentals',
   },
   {
     name: 'The AIDA Conversion Funnel & DAGMAR',
     meta: 'Hierarchy of Advertising Effects',
     art: 'glacier',
+    image: '/images/vault/card-aida.jpg',
     href: '/knowledge-library?cat=advertising',
   },
 ];
@@ -183,6 +210,7 @@ export default function CampaignFolderVault() {
               meta="7 Case Studies"
               tone="dark"
               art="ember"
+              image="/images/vault/vault-indian.jpg"
               width={290}
               seed={5}
               action="more"
@@ -190,11 +218,11 @@ export default function CampaignFolderVault() {
               appearDelay={0}
               files={indianCampaignFiles}
               menu={[
-                { label: 'View Indian Hub', onSelect: () => window.location.assign('/indian-marketing') },
-                { label: 'Explore Blinkit Study', onSelect: () => window.location.assign('/campaigns/blinkit-quick-commerce-topical-marketing') },
-                { label: 'Explore Zepto Study', onSelect: () => window.location.assign('/campaigns/zepto-quick-commerce-speed') },
-                { label: 'Explore boAt Study', onSelect: () => window.location.assign('/campaigns/boat-youth-lifestyle-audio') },
-                { label: 'Explore Inshorts Study', onSelect: () => window.location.assign('/campaigns/inshorts-news-brevity-product') },
+                { label: 'View Indian Hub', onSelect: () => navigate('/indian-marketing') },
+                { label: 'Explore Blinkit Study', onSelect: () => navigate('/campaigns/blinkit-quick-commerce-topical-marketing') },
+                { label: 'Explore Zepto Study', onSelect: () => navigate('/campaigns/zepto-quick-commerce-speed') },
+                { label: 'Explore boAt Study', onSelect: () => navigate('/campaigns/boat-youth-lifestyle-audio') },
+                { label: 'Explore Inshorts Study', onSelect: () => navigate('/campaigns/inshorts-news-brevity-product') },
               ]}
             />
             <div className="mt-4 text-center">
@@ -211,6 +239,7 @@ export default function CampaignFolderVault() {
               meta="4 Case Studies"
               tone="dark"
               art="aurora"
+              image="/images/vault/vault-global.jpg"
               width={290}
               seed={17}
               action="more"
@@ -218,10 +247,10 @@ export default function CampaignFolderVault() {
               appearDelay={140}
               files={globalCampaignFiles}
               menu={[
-                { label: 'View Global Hub', onSelect: () => window.location.assign('/global-marketing') },
-                { label: 'Explore Nike Study', onSelect: () => window.location.assign('/campaigns/nike-just-do-it-evolution') },
-                { label: 'Explore Share a Coke', onSelect: () => window.location.assign('/campaigns/share-a-coke-personalisation') },
-                { label: 'Explore Apple Study', onSelect: () => window.location.assign('/campaigns/apple-think-different-comeback') },
+                { label: 'View Global Hub', onSelect: () => navigate('/global-marketing') },
+                { label: 'Explore Nike Study', onSelect: () => navigate('/campaigns/nike-just-do-it-evolution') },
+                { label: 'Explore Share a Coke', onSelect: () => navigate('/campaigns/share-a-coke-personalisation') },
+                { label: 'Explore Apple Study', onSelect: () => navigate('/campaigns/apple-think-different-comeback') },
               ]}
             />
             <div className="mt-4 text-center">
@@ -238,6 +267,7 @@ export default function CampaignFolderVault() {
               meta="4 Frameworks"
               tone="dark"
               art="dusk"
+              image="/images/vault/vault-strategy.jpg"
               width={290}
               seed={23}
               action="more"
@@ -245,8 +275,8 @@ export default function CampaignFolderVault() {
               appearDelay={280}
               files={strategyFiles}
               menu={[
-                { label: 'Open Knowledge Library', onSelect: () => window.location.assign('/knowledge-library') },
-                { label: 'Interactive Brief Planner', onSelect: () => window.location.assign('/strategy-hub#planner') },
+                { label: 'Open Knowledge Library', onSelect: () => navigate('/knowledge-library') },
+                { label: 'Interactive Brief Planner', onSelect: () => navigate('/strategy-hub#planner') },
               ]}
             />
             <div className="mt-4 text-center">
@@ -263,6 +293,7 @@ export default function CampaignFolderVault() {
               meta="6 Ad Showcases"
               tone="dark"
               art="verdant"
+              image="/images/vault/vault-creative.jpg"
               width={290}
               seed={31}
               action="more"
@@ -270,10 +301,10 @@ export default function CampaignFolderVault() {
               appearDelay={420}
               files={galleryCampaignFiles}
               menu={[
-                { label: 'View All Campaigns', onSelect: () => window.location.assign('/campaigns') },
-                { label: 'Blinkit × Zomato Hoardings', onSelect: () => window.location.assign('/campaigns/blinkit-quick-commerce-topical-marketing') },
-                { label: 'Amul Topical Cartoon Archive', onSelect: () => window.location.assign('/campaigns/amul-girl-topical-advertising') },
-                { label: 'boAt Lost in Nirvana Creative', onSelect: () => window.location.assign('/campaigns/boat-youth-lifestyle-audio') },
+                { label: 'View All Campaigns', onSelect: () => navigate('/campaigns') },
+                { label: 'Blinkit × Zomato Hoardings', onSelect: () => navigate('/campaigns/blinkit-quick-commerce-topical-marketing') },
+                { label: 'Amul Topical Cartoon Archive', onSelect: () => navigate('/campaigns/amul-girl-topical-advertising') },
+                { label: 'boAt Lost in Nirvana Creative', onSelect: () => navigate('/campaigns/boat-youth-lifestyle-audio') },
               ]}
             />
             <div className="mt-4 text-center">

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" fill="none">
+  <rect x="6" y="8" width="44" height="44" rx="12" fill="#F8CB46" />
+  <path d="M22 18H32C36.4183 18 40 21.5817 40 26C40 28.5 38.8 30.7 37 32C39.5 33.4 41 36 41 39C41 43.4183 37.4183 47 33 47H22V18Z" fill="#0C831F" />
+  <circle cx="28" cy="27" r="3" fill="#F8CB46" />
+  <circle cx="28" cy="38" r="3" fill="#F8CB46" />
+  <text x="62" y="41" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="34" fill="#0C831F" letter-spacing="-1">blink<tspan fill="#F8CB46">it</tspan></text>
+</svg>

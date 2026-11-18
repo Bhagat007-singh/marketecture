@@ -24,6 +24,7 @@ const navItems: NavItem[] = [
       { label: 'Campaign Archive', href: '/campaigns', desc: 'All analysed case studies' },
       { label: 'Indian Campaigns', href: '/campaigns?category=indian', desc: 'Regional & national campaigns' },
       { label: 'Global Campaigns', href: '/campaigns?category=global', desc: 'Worldwide brand platforms' },
+      { label: 'Marketing Circle', href: '/marketing-circle', desc: 'Community critiques & strategic debates' },
     ],
   },
   {
@@ -50,6 +51,9 @@ const navItems: NavItem[] = [
   { label: 'India vs Global', href: '/india-vs-global' },
   { label: 'AI Desk', href: '/ai-marketing-desk' },
   { label: 'Tools', href: '/tools-resources' },
+  { label: 'Circle', href: '/marketing-circle' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Navbar() {
@@ -290,6 +294,19 @@ export default function Navbar() {
                     <div>
                       <div className="text-xs font-heading font-bold text-white">Marketing Calculators</div>
                       <div className="text-[11px] text-muted">CTR, CPM, CPC, ROI & ROAS</div>
+                    </div>
+                  </Link>
+                  <Link
+                    href="/marketing-circle"
+                    onClick={() => setIsDrawerOpen(false)}
+                    className="flex items-center gap-3 p-3 bg-[#0D1522] border border-white/10 rounded-md hover:border-[#F28C38]/60 transition-colors"
+                  >
+                    <div className="w-8 h-8 rounded bg-[#F28C38]/20 flex items-center justify-center text-[#F28C38]">
+                      <BookOpen className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-heading font-bold text-white">Marketing Circle</div>
+                      <div className="text-[11px] text-muted">Community debates & campaign critiques</div>
                     </div>
                   </Link>
                 </div>

@@ -86,6 +86,7 @@ export interface OverstoryStudioLandingProps {
   children?: React.ReactNode
   newsletter?: boolean
   ctaButtonText?: string
+  ctaButtonHref?: string
   brand?: string
   /** In-page links. "#work", "#services", "#process", "#pricing", "#faq" and "#contact" scroll within the page. */
   links?: OvsLink[]
@@ -105,12 +106,12 @@ export interface OverstoryStudioLandingProps {
   manifesto?: { kicker?: string; text?: string } | null
   stats?: OvsStat[] | null
   services?: { kicker?: string; title?: string; text?: string; items?: OvsService[] } | null
-  work?: { kicker?: string; title?: string; items?: OvsCase[]; next?: string } | null
+  work?: { kicker?: string; title?: string; items?: OvsCase[]; next?: string; nextHref?: string; nextButton?: string } | null
   process?: { kicker?: string; title?: string; steps?: OvsStep[] } | null
   quotes?: OvsQuote[] | null
   pricing?: { kicker?: string; title?: string; text?: string; plans?: OvsPlan[]; quarterlyNote?: string } | null
   faq?: { kicker?: string; title?: string; text?: string; items?: OvsFaq[] } | null
-  cta?: { title?: string; text?: string; button?: string } | null
+  cta?: { title?: string; text?: string; button?: string; href?: string } | null
   footer?: { columns?: { title: string; links: OvsLink[] }[]; city?: string; timeZone?: string; note?: string } | null
   email?: string
   currency?: string
@@ -1388,6 +1389,7 @@ export default function OverstoryStudioLanding({
   children,
   newsletter = false,
   ctaButtonText = "Explore Vault",
+  ctaButtonHref = "#vault",
   brand = "Overstory",
   links = DEFAULT_LINKS,
   status = null,
@@ -1429,6 +1431,8 @@ export default function OverstoryStudioLanding({
     kicker: work?.kicker || "Selected work",
     title: work?.title || "Products we helped grow.",
     next: work?.next || "Your product, next",
+    nextHref: work?.nextHref || "/campaigns",
+    nextButton: work?.nextButton || "Explore Campaign Archive",
     items: work?.items || (DEFAULT_CASES as OvsCase[]),
   }
   const pr = process === null ? null : { kicker: process?.kicker || "How we work", title: process?.title || "From seed to canopy in eight weeks.", steps: process?.steps || DEFAULT_STEPS }
@@ -1888,7 +1892,7 @@ export default function OverstoryStudioLanding({
   } as React.CSSProperties
 
   return (
-    <div ref={root} className={"ovs-root " + className} data-scheme={scheme} data-season={season} data-photo={usePhoto ? "" : undefined} data-menu={menu ? "" : undefined} style={style}>
+    <div ref={root} id="top" className={"ovs-root " + className} data-scheme={scheme} data-season={season} data-photo={usePhoto ? "" : undefined} data-menu={menu ? "" : undefined} style={style}>
       <style>{OVS_CSS}</style>
       <a className="ovs-skip" href={"#" + uid + "main"}>
         Skip to content
@@ -1923,7 +1927,7 @@ export default function OverstoryStudioLanding({
                 </svg>
               </button>
             ) : null}
-            <Magnet className="ovs-btn ovs-btn-dark ovs-nav-cta" href="#contact" onClick={book("nav")}>
+            <Magnet className="ovs-btn ovs-btn-dark ovs-nav-cta" href={ctaButtonHref || "#vault"} onClick={book("nav")}>
               <span>{ctaButtonText}</span>
               <Arrow />
             </Magnet>
@@ -1941,7 +1945,7 @@ export default function OverstoryStudioLanding({
             {l.label}
           </a>
         ))}
-        <a href="#contact" className="ovs-btn ovs-btn-dark" onClick={book("menu")} style={{ "--i": links.length } as React.CSSProperties}>
+        <a href={ctaButtonHref || "#vault"} className="ovs-btn ovs-btn-dark" onClick={book("menu")} style={{ "--i": links.length } as React.CSSProperties}>
           {ctaButtonText} <Arrow />
         </a>
       </div>
@@ -2024,7 +2028,7 @@ export default function OverstoryStudioLanding({
 
         {/* ------------------------------------------------------ manifesto */}
         {manifesto ? (
-          <section className="ovs-sec ovs-manifesto" data-sec="about" aria-label="About">
+          <section className="ovs-sec ovs-manifesto" id="about" data-sec="about" aria-label="About">
             <div className="ovs-wrap">
               <Kicker n="01" text={manifesto.kicker || DEFAULT_MANIFESTO.kicker} />
               <p className="ovs-man" data-manifesto>
@@ -2078,7 +2082,7 @@ export default function OverstoryStudioLanding({
 
         {/* ------------------------------------------------------- services */}
         {svc ? (
-          <section className="ovs-sec ovs-services" data-sec="services" aria-labelledby={uid + "svc"}>
+          <section className="ovs-sec ovs-services" id="services" data-sec="services" aria-labelledby={uid + "svc"}>
             <div className="ovs-wrap">
               <div className="ovs-head">
                 <div>
@@ -2133,7 +2137,7 @@ export default function OverstoryStudioLanding({
 
         {/* ----------------------------------------------------------- work */}
         {wk ? (
-          <section className="ovs-work" data-work data-sec="work" aria-labelledby={uid + "wk"}>
+          <section className="ovs-work" id="work" data-work data-sec="work" aria-labelledby={uid + "wk"}>
             <div className="ovs-work-stage" data-workstage>
               <div className="ovs-wrap ovs-work-head">
                 <div>
@@ -2193,11 +2197,11 @@ export default function OverstoryStudioLanding({
                   </article>
                 ))}
                 <article className="ovs-card ovs-card-next" data-card>
-                  <a href="#contact" onClick={book("work")} className="ovs-card-link">
+                  <a href={wk.nextHref || "/campaigns"} onClick={wk.nextHref ? undefined : book("work")} className="ovs-card-link">
                     <BrandMark />
                     <span className="ovs-card-next-t">{wk.next}</span>
                     <span className="ovs-btn ovs-btn-dark">
-                      Start a project <Arrow />
+                      {wk.nextButton || "Explore Campaign Archive"} <Arrow />
                     </span>
                   </a>
                 </article>
@@ -2217,7 +2221,7 @@ export default function OverstoryStudioLanding({
 
         {/* -------------------------------------------------------- process */}
         {pr ? (
-          <section className="ovs-sec ovs-process" data-process data-sec="process" aria-labelledby={uid + "pr"}>
+          <section className="ovs-sec ovs-process" id="process" data-process data-sec="process" aria-labelledby={uid + "pr"}>
             <div className="ovs-wrap">
               <Kicker n="04" text={pr.kicker} />
               <span id={uid + "pr"}>
@@ -2385,7 +2389,7 @@ export default function OverstoryStudioLanding({
 
         {/* ------------------------------------------------------------ faq */}
         {fq ? (
-          <section className="ovs-sec ovs-faq" data-sec="faq" aria-labelledby={uid + "fq"}>
+          <section className="ovs-sec ovs-faq" id="faq" data-sec="faq" aria-labelledby={uid + "fq"}>
             <div className="ovs-wrap ovs-faq-grid">
               <div>
                 <Kicker n={pc ? "06" : "05"} text={fq.kicker} />
@@ -2425,7 +2429,7 @@ export default function OverstoryStudioLanding({
 
         {/* --------------------------------------------------------- finale */}
         {cta ? (
-          <section className="ovs-fin" data-fin data-sec="contact" aria-labelledby={uid + "cta"}>
+          <section className="ovs-fin" id="contact" data-fin data-sec="contact" aria-labelledby={uid + "cta"}>
             <div className="ovs-fin-stage">
               <div className="ovs-window">
                 {usePhoto ? <PhotoCanopy src={photo as string} season={season} scheme={scheme} turn /> : <Canopy seed={seed + 31} scheme={scheme} palette={pal} lazy />}
@@ -2435,7 +2439,7 @@ export default function OverstoryStudioLanding({
                   </h2>
                   <p>{cta.text || DEFAULT_CTA.text}</p>
                   <div className="ovs-fin-actions">
-                    <Magnet className="ovs-btn ovs-btn-dark ovs-btn-xl" href={"mailto:" + email} onClick={onBook ? book("finale") : undefined}>
+                    <Magnet className="ovs-btn ovs-btn-dark ovs-btn-xl" href={cta.href || "/campaigns"} onClick={onBook ? book("finale") : undefined}>
                       <span>{cta.button || DEFAULT_CTA.button}</span>
                       <Arrow />
                     </Magnet>
@@ -2521,11 +2525,11 @@ export default function OverstoryStudioLanding({
           </div>
           <div className="ovs-wrap ovs-foot-bottom">
             <span>
-              © {new Date().getFullYear()} {brand} Studio
+              © {new Date().getFullYear()} {brand}
             </span>
             <span>{ft.note}</span>
             <button type="button" className="ovs-top" onClick={() => root.current?.scrollIntoView({ behavior: still ? "auto" : "smooth" })}>
-              Back to the canopy
+              Back to top
               <svg className="ovs-svg ovs-arrow" viewBox="0 0 16 16" aria-hidden="true">
                 <path d="M8 13V3M4 7l4-4 4 4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>

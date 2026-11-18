@@ -66,21 +66,24 @@ const globalTopics = [
 const globalCaseSnapshots = [
   {
     brand: 'Coca-Cola',
+    slug: 'share-a-coke-personalisation',
     campaign: '"Open Happiness" & "Share a Coke"',
     reach: '200+ Countries',
     insight: 'Positioning carbonated sugar water as the universal currency of optimism and human reconciliation.',
   },
   {
     brand: 'Nike',
-    campaign: '"Find Your Greatness" (London 2012)',
+    slug: 'nike-just-do-it-evolution',
+    campaign: '"Find Your Greatness" & "Just Do It"',
     reach: 'Global Non-Sponsor Ambush',
     insight: 'By celebrating everyday athletes in everyday towns named London (London, Ohio; London, Nigeria), Nike outperformed the official multi-million dollar Olympic sponsor.',
   },
   {
-    brand: 'Dove (Unilever)',
-    campaign: '"Real Beauty" Evolution',
-    reach: 'Worldwide Platform',
-    insight: 'Overturning toxic cosmetic industry ideals to champion authentic body diversity, building a $5B+ purpose-led brand.',
+    brand: 'Apple',
+    slug: 'apple-think-different-comeback',
+    campaign: '"Think Different" & Design Purity',
+    reach: 'Global Ecosystem',
+    insight: 'Transforming personal computing from utilitarian hardware into cultural self-expression, shifting users into passionate brand evangelists.',
   },
 ];
 
@@ -164,16 +167,18 @@ export default function GlobalMarketingContent() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {globalCaseSnapshots.map((cs) => (
-            <div
+            <Link
               key={cs.brand}
-              className="bg-navy-light/40 border border-white/10 p-6 rounded-sm hover:border-orange/50 transition-colors flex flex-col justify-between"
+              href={`/campaigns/${cs.slug}`}
+              className="group bg-navy-light/40 border border-white/10 hover:border-orange/60 p-6 rounded-sm transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 <span className="text-xs font-mono text-orange block mb-1">
                   {cs.reach}
                 </span>
-                <h3 className="text-xl font-heading font-bold text-ivory mb-1">
-                  {cs.brand}
+                <h3 className="text-xl font-heading font-bold text-ivory group-hover:text-orange transition-colors flex items-center justify-between mb-1">
+                  <span>{cs.brand}</span>
+                  <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all text-orange" />
                 </h3>
                 <h4 className="text-xs font-heading font-medium text-ivory/80 mb-4">
                   {cs.campaign}
@@ -182,7 +187,11 @@ export default function GlobalMarketingContent() {
                   {cs.insight}
                 </p>
               </div>
-            </div>
+              <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-heading font-semibold text-orange">
+                <span>Read Full Teardown</span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </Link>
           ))}
         </div>
 
@@ -190,7 +199,7 @@ export default function GlobalMarketingContent() {
           <p className="text-xs text-muted">
             Explore complete 13-point global case studies with creative executions.
           </p>
-          <Link href="/campaigns" className="btn-primary text-xs py-3 px-6 whitespace-nowrap">
+          <Link href="/campaigns?category=global" className="btn-primary text-xs py-3 px-6 whitespace-nowrap">
             View Global Campaigns in Archive →
           </Link>
         </div>

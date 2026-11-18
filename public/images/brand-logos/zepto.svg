@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 55" fill="none">
+  <!-- Zepto stylized Z icon -->
+  <g transform="translate(6, 6)">
+    <rect width="40" height="40" rx="10" fill="#7B1FA2"/>
+    <path d="M12 12H28L17 26H28V30H12L23 16H12V12Z" fill="#FFEB3B"/>
+    <circle cx="28" cy="12" r="2.5" fill="#E91E63"/>
+  </g>
+  <!-- zepto typography -->
+  <text x="54" y="33" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="28" fill="#FFFFFF" letter-spacing="-0.5">zepto</text>
+  <text x="55" y="43" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="8" fill="#FFEB3B" letter-spacing="1.5">10-MIN DELIVERY</text>
+</svg>

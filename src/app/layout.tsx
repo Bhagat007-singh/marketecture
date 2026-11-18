@@ -26,6 +26,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://marketecture.studio'),
   title: 'MARKETECTURE — Where Marketing Ideas Take Shape',
   description:
     'MARKETECTURE is a premium marketing knowledge platform featuring campaign breakdowns, strategic frameworks, Indian & global marketing insights, AI-powered tools, and expert analysis.',
@@ -40,6 +41,11 @@ export const metadata: Metadata = {
     'AI marketing',
   ],
   authors: [{ name: 'MARKETECTURE' }],
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
   openGraph: {
     title: 'MARKETECTURE — Where Marketing Ideas Take Shape',
     description:

@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import PageHero from '@/components/ui/PageHero';
 import CampaignFolderVault from '@/components/campaigns/CampaignFolderVault';
 import CampaignGrid from '@/components/campaigns/CampaignGrid';
+import { fallbackCampaigns } from '@/lib/campaigns-data';
 import { getPosts, wpPostToCampaign } from '@/lib/wordpress';
 import { Campaign } from '@/lib/types';
 
@@ -18,9 +19,24 @@ export default async function CampaignsPage() {
   let campaigns: Campaign[] = [];
   try {
     const { posts } = await getPosts({ perPage: 20 });
-    campaigns = posts.map(wpPostToCampaign);
+    const wpCampaigns = posts.map(wpPostToCampaign);
+    // Merge WordPress posts with fallbackCampaigns to ensure featured hero images and full coverage
+    const mergedWp: Campaign[] = wpCampaigns.map((wp): Campaign => {
+      const fb = fallbackCampaigns.find((f) => f.slug === wp.slug);
+      return {
+        ...wp,
+        featuredImage: wp.featuredImage || fb?.featuredImage,
+      };
+    });
+    campaigns = [...mergedWp];
+    for (const fb of fallbackCampaigns) {
+      if (!campaigns.some((c) => c.slug === fb.slug)) {
+        campaigns.push(fb);
+      }
+    }
   } catch (error) {
     console.error('Failed to load campaigns from WordPress API:', error);
+    campaigns = [...fallbackCampaigns];
   }
 
   return (

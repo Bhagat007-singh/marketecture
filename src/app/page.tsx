@@ -21,19 +21,21 @@ const NAV_LINKS: OvsLink[] = [
   { label: 'Case Studies', href: '#work' },
   { label: 'AI Desk', href: '#ai-desk' },
   { label: '3D Vault', href: '#vault' },
-  { label: 'Strategy Hub', href: '/strategy-hub' },
+  { label: 'Calculators', href: '/tools-resources' },
+  { label: 'About', href: '/about' },
   { label: 'Methodology', href: '#process' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const LOGOS: OvsLogo[] = [
-  { name: 'BLINKIT', mark: 'knot', type: 'heavy', image: '/images/brand-logos/blinkit.png' },
-  { name: 'ZOMATO', mark: 'slash', type: 'heavy', image: '/images/brand-logos/zomato.png' },
-  { name: 'APPLE', mark: 'knot', type: 'sans', image: '/images/brand-logos/apple.png' },
-  { name: 'AMUL', mark: 'leaf', type: 'serif', image: '/images/brand-logos/amul.jpg' },
-  { name: 'MARKETECTURE', mark: 'scribe', type: 'heavy', image: '/images/brand-logos/uploaded-logo.png' },
-  { name: 'NIKE', mark: 'watch', type: 'heavy' },
-  { name: 'BOAT', mark: 'venn', type: 'sans' },
+  { name: 'BLINKIT', mark: 'knot', type: 'heavy', image: '/images/brand-logos/blinkit.svg' },
+  { name: 'ZOMATO', mark: 'slash', type: 'heavy', image: '/images/brand-logos/zomato.svg' },
+  { name: 'APPLE', mark: 'knot', type: 'sans', image: '/images/brand-logos/apple.svg' },
+  { name: 'AMUL', mark: 'leaf', type: 'serif', image: '/images/brand-logos/amul.svg' },
+  { name: 'MARKETECTURE', mark: 'scribe', type: 'heavy', image: '/images/brand-logos/marketecture.svg' },
+  { name: 'NIKE', mark: 'watch', type: 'heavy', image: '/images/brand-logos/nike.svg' },
+  { name: 'BOAT', mark: 'venn', type: 'sans', image: '/images/brand-logos/boat.svg' },
 ];
 
 const MANIFESTO = {
@@ -42,7 +44,7 @@ const MANIFESTO = {
 };
 
 const STATS = [
-  { value: 26, suffix: '+', label: 'deep-dive campaign teardowns' },
+  { value: 26, suffix: '+', label: 'total strategic assets (10 teardowns + 16 playbooks & tools)' },
   { value: 10, suffix: '+', label: 'proven strategic frameworks (4Ps, STP, Porter’s)' },
   { value: 50, suffix: '+', label: 'curated AI marketing tools & workflows' },
   { value: 100, suffix: '%', label: 'open-access strategic intelligence' },
@@ -88,7 +90,7 @@ const FEATURED_CASES: OvsCase[] = [
   {
     client: 'Blinkit',
     mark: 'knot',
-    image: '/images/brand-logos/blinkit.png',
+    image: '/images/brand-logos/blinkit.svg',
     kind: 'Quick Commerce & Viral Banter',
     title: '10-minute delivery economics and the nationwide viral billboard banter with Zomato.',
     metric: '10 Min',
@@ -101,7 +103,7 @@ const FEATURED_CASES: OvsCase[] = [
   {
     client: 'Zomato',
     mark: 'slash',
-    image: '/images/brand-logos/zomato.png',
+    image: '/images/brand-logos/zomato.svg',
     kind: 'Indian Viral Growth',
     title: 'How humor, push notification banter, and outdoor topicality built India’s food-tech giant.',
     metric: '+142%',
@@ -114,7 +116,7 @@ const FEATURED_CASES: OvsCase[] = [
   {
     client: 'Apple',
     mark: 'knot',
-    image: '/images/brand-logos/apple.png',
+    image: '/images/brand-logos/apple.svg',
     kind: 'Global Brand Revival',
     title: 'The 1997 "Think Different" masterstroke that resurrected Apple from near-bankruptcy.',
     metric: '$3T',
@@ -127,7 +129,7 @@ const FEATURED_CASES: OvsCase[] = [
   {
     client: 'Amul',
     mark: 'leaf',
-    image: '/images/brand-logos/amul.jpg',
+    image: '/images/brand-logos/amul.svg',
     kind: 'Topical Advertising Legacy',
     title: 'The Amul Girl: 58+ years of uninterrupted daily commentary capturing India’s cultural pulse.',
     metric: '58+ Yrs',
@@ -140,6 +142,7 @@ const FEATURED_CASES: OvsCase[] = [
   {
     client: 'Nike',
     mark: 'watch',
+    image: '/images/brand-logos/nike.svg',
     kind: 'Iconic Positioning',
     title: 'From running shoe challenger to universal symbol of grit, courage, and human potential.',
     metric: '18x',
@@ -152,6 +155,7 @@ const FEATURED_CASES: OvsCase[] = [
   {
     client: 'boAt',
     mark: 'watch',
+    image: '/images/brand-logos/boat.svg',
     kind: 'Youth D2C Lifestyle Audio',
     title: 'Transforming functional audio tech into an expressive badge of Gen-Z streetwear and identity.',
     metric: '360M+',
@@ -164,6 +168,7 @@ const FEATURED_CASES: OvsCase[] = [
   {
     client: 'Zepto',
     mark: 'slash',
+    image: '/images/brand-logos/zepto.svg',
     kind: 'Hyperlocal Speed Marketing',
     title: '10-minute grocery delivery economics and viral real-time street hoardings.',
     metric: '10 Min',
@@ -176,6 +181,7 @@ const FEATURED_CASES: OvsCase[] = [
   {
     client: 'Inshorts',
     mark: 'scribe',
+    image: '/images/brand-logos/inshorts.svg',
     kind: 'Product-Led Content UX',
     title: 'How constraining stories to 60 words created India’s most retained mobile news habit.',
     metric: '60 Words',
@@ -245,7 +251,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Are all the case studies and frameworks really free?',
-    a: 'Yes. All 26 teardowns across Indian breakout brands, global iconic campaigns, and strategic frameworks are 100% free to read, bookmark, and reference.',
+    a: 'Yes. All 26 assets across Indian breakout brands, global iconic campaigns, strategic frameworks, and calculators are 100% free to read, bookmark, and reference.',
   },
   {
     q: 'How are the Indian marketing case studies selected?',
@@ -275,6 +281,7 @@ const FOOTER_DATA = {
     {
       title: 'Resources',
       links: [
+        { label: 'Marketing Calculators', href: '/tools-resources' },
         { label: 'AI Tools Directory', href: '/ai-marketing-desk' },
         { label: 'Marketing Frameworks', href: '/knowledge-library' },
         { label: 'Brand Comparisons', href: '/india-vs-global' },
@@ -284,6 +291,7 @@ const FOOTER_DATA = {
     {
       title: 'Connect',
       links: [
+        { label: 'About Marketecture', href: '/about' },
         { label: 'GitHub Repository', href: 'https://github.com/Bhagat007-singh/marketecture' },
         { label: 'LinkedIn', href: 'https://linkedin.com' },
         { label: 'Twitter / X', href: 'https://x.com' },
@@ -305,7 +313,9 @@ export default function HomePage() {
       theme="dark"
       themeToggle={true}
       ctaButtonText="Explore Vault"
-      status="✦ 26 IN-DEPTH MARKETING CASE STUDIES & STRATEGIC PLAYBOOKS"
+      ctaButtonHref="#vault"
+      photo="/images/vault/vault-global.jpg"
+      status="✦ 26 IN-DEPTH MARKETING CASE STUDIES, FRAMEWORKS & CALCULATORS"
       hero={{
         lead: 'Marketing Intelligence For',
         words: ['Brands', 'Agencies', 'Strategists', 'Founders', 'Growth Teams'],
@@ -321,7 +331,9 @@ export default function HomePage() {
       work={{
         kicker: 'Featured Case Studies',
         title: 'Iconic campaigns decoded down to the atom.',
-        next: 'Explore all 26 teardowns',
+        next: 'Explore all 26 teardowns & playbooks',
+        nextHref: '/campaigns',
+        nextButton: 'Explore Campaign Archive',
         items: FEATURED_CASES,
       }}
       process={{
@@ -341,6 +353,7 @@ export default function HomePage() {
         title: 'Where Marketing Ideas Take Shape.',
         text: 'Dive into the vault of case studies, master timeless marketing frameworks, and discover the tools shaping modern growth.',
         button: 'Explore Campaign Archive',
+        href: '/campaigns',
       }}
       footer={FOOTER_DATA}
       email="hello@marketecture.agency"

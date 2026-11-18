@@ -72,7 +72,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-heading font-bold text-ivory text-sm">Editorial Submissions</h4>
-                    <p className="text-muted">editor@marketecture.org</p>
+                    <p className="text-muted">hello@marketecture.agency</p>
                     <p className="text-[11px] text-muted/70">Turnaround time: 48 business hours</p>
                   </div>
                 </div>

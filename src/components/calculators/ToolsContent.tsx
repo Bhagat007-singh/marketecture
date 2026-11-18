@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Calculator,
   Percent,
@@ -15,10 +15,237 @@ import {
   CheckSquare,
   Download,
   FileSpreadsheet,
+  Check,
+  FileText,
+  X,
+  Eye,
 } from 'lucide-react';
+
+interface BlueprintItem {
+  id: string;
+  title: string;
+  format: string;
+  desc: string;
+  filename: string;
+  content: string;
+}
+
+const BLUEPRINTS: BlueprintItem[] = [
+  {
+    id: 'creative-brief',
+    title: 'Master Creative Brief Canvas',
+    format: 'Markdown / PDF',
+    desc: 'The single-page brief standard used by global creative agencies to align clients, strategists, and creatives.',
+    filename: 'marketecture-master-creative-brief.md',
+    content: `# MASTER CREATIVE BRIEF CANVAS
+**Framework**: Marketecture Editorial Strategy Series
+**Version**: 2.4 Production Standard
+
+---
+
+## 1. PROJECT OVERVIEW
+- **Brand / Client**: [Brand Name]
+- **Campaign Name**: [Campaign Title]
+- **Flighting Window**: [Q1 / Q2 Dates]
+- **Budget Tier**: [Brand Building 60% / Direct Response 40%]
+
+## 2. THE BUSINESS PROBLEM
+*What real-world business hurdle is marketing tasked with overcoming?*
+> [Define market challenge: e.g. Plateaued organic acquisition, commoditisation, or low unaided recall among 18-24 demographics.]
+
+## 3. QUANTIFIED OBJECTIVE
+*SMART criteria (Specific, Measurable, Attainable, Relevant, Time-bound):*
+- Primary: Increase unaided brand salience by +18% within 90 days.
+- Secondary: Drive 250,000 qualified lead conversions at target CAC < ₹450.
+
+## 4. TARGET AUDIENCE & BEHAVIORAL TENSION
+- **Core Demographic**: [Age, geography, income tier, media habit]
+- **The Human Tension**: What do they currently believe or feel that holds them back?
+- **Current Behavior**: [Buying competitor commodity X]
+- **Desired Behavior**: [Treating our brand as an aspirational badge]
+
+## 5. THE SINGLE CORE INSIGHT
+*A penetrating human truth that reframes the conversation:*
+> [One provocative sentence uncovering an emotional or cultural reality.]
+
+## 6. THE CREATIVE PROPOSITION (THE SMP)
+*Single-Minded Proposition:*
+> [The one sentence we want etched into the consumer's memory.]
+
+## 7. REASONS TO BELIEVE (RTBs)
+1. **Proof Point 1**: [Product feature or clinical metric]
+2. **Proof Point 2**: [Social proof, market heritage, or customer volume]
+3. **Proof Point 3**: [Audited pricing or distribution accessibility]
+
+## 8. MANDATORIES & EXECUTIONAL GUARDRAILS
+- Mandatory Elements: Logo lockup (min 3 sec on video), sound logo, legal disclaimer.
+- Tone of Voice: Witty, authoritative, uncompromising, empathetic.
+- Media Channels: OOH Tentpoles + YouTube Non-Skip (15s) + Meta Reel Retargeting.
+`,
+  },
+  {
+    id: 'content-calendar',
+    title: 'Annual Omnichannel Content Calendar',
+    format: 'Spreadsheet Template',
+    desc: '52-week thematic editorial flighting schedule with platform-specific content pillar tagging.',
+    filename: 'marketecture-annual-content-calendar.md',
+    content: `# 52-WEEK OMNICHANNEL CONTENT CALENDAR TEMPLATE
+**Framework**: Marketecture Editorial Standard (Hero-Hub-Help Model)
+
+---
+
+## Q1: BRAND BUILDING & CORE THESIS (JAN - MAR)
+| Week | Theme / Pillar | Content Tier | Channel Matrix | KPI Target |
+|------|----------------|--------------|----------------|------------|
+| W01  | New Year Resolution vs Truth | Hub (Educational) | LinkedIn, Blog, X | 15k Impressions |
+| W02  | Industry Prediction Report | Hero (Tentpole) | YouTube Long-form, PR | 50k Views |
+| W03  | Product Deep-Dive & RTB | Help (Utility) | Reels, TikTok, FAQ | 3.5% Engagement |
+| W04  | Customer Transformation Case | Hub (Social Proof) | Case Study, Newsletter | 12% CTR |
+
+## CONTENT REPURPOSING PLAYBOOK
+1. **Core Asset**: 1x Comprehensive Long-Form Teardown (1,500 words).
+2. **Derivative 1**: 5x Slide Carousel for LinkedIn / Instagram.
+3. **Derivative 2**: 1x 60-second vertical video breakdown for Shorts / Reels.
+4. **Derivative 3**: 1x Provocative 6-tweet commentary thread on X.
+5. **Derivative 4**: 1x Newsletter feature with actionable executive summary.
+`,
+  },
+  {
+    id: 'whitespace-matrix',
+    title: 'Competitor Whitespace Matrix',
+    format: 'Analysis Canvas',
+    desc: 'Perceptual positioning worksheet to identify untapped market opportunities across pricing and prestige.',
+    filename: 'marketecture-competitor-whitespace-matrix.md',
+    content: `# COMPETITOR WHITESPACE MATRIX
+**Framework**: Perceptual Gap Analysis & Strategic Territory Mapping
+
+---
+
+## 1. AXIS DEFINITIONS
+- **X-Axis**: Rational Utility (Left) <---> Emotional Identity (Right)
+- **Y-Axis**: Mass Accessibility (Bottom) <---> Ultra-Premium Prestige (Top)
+
+## 2. COMPETITOR AUDIT AUDIT
+| Brand | Quadrant | Primary Tagline | Core Vulnerability |
+|-------|----------|-----------------|--------------------|
+| Competitor A | Top-Left (Premium Rational) | "Engineered for Precision" | Clinical, lacks emotional warmth |
+| Competitor B | Bottom-Left (Budget Rational) | "Always the Lowest Price" | Susceptible to price wars, zero loyalty |
+| Competitor C | Bottom-Right (Mass Emotional) | "Together for Moments" | Cluttered messaging, weak product RTBs |
+
+## 3. IDENTIFIED WHITESPACE OPPORTUNITY
+> **The Uncontested Territory**: Top-Right (Aspirational Emotional Badge with accessible financing).
+> **Strategic Rationale**: Market analysis reveals high consumer willingness to pay a 25% premium for authentic cultural storytelling.
+`,
+  },
+  {
+    id: 'media-flighting',
+    title: 'Media Flighting & Budget Allocation Sheet',
+    format: 'Excel / Sheets',
+    desc: 'Formula-enabled spreadsheet incorporating the 60/40 rule and marginal CAC diminishing returns curves.',
+    filename: 'marketecture-media-budget-allocation.md',
+    content: `# MEDIA FLIGHTING & BUDGET ALLOCATION FORMULA
+**Reference**: Binet & Field Long & Short of It Framework
+
+---
+
+## 1. 60/40 BUDGET DIVISION MODEL
+- **Total Annual Marketing Budget**: 100%
+- **Brand Building Allocation (60%)**:
+  - Focus: High-reach, broad-targeting emotional creative.
+  - Channels: Connected TV (CTV), High-Impact OOH, Cinema, YouTube 30s.
+  - Payoff Horizon: 6 to 36 months (compounds mental availability).
+- **Direct Response Allocation (40%)**:
+  - Focus: High-intent capture, friction removal, conversion.
+  - Channels: Google Paid Search (Exact Match), Meta Dynamic Retargeting, Performance Affiliate.
+  - Payoff Horizon: 0 to 90 days.
+
+## 2. FLIGHTING SCHEDULE OPTIONS
+1. **Continuous (Drip)**: Flat spend week-over-week. Best for high-frequency repeat purchase goods (FMCG).
+2. **Flighted (Burst)**: Concentrated bursts of heavy spending separated by periods of zero spending. Best for seasonal launches and tight budgets.
+3. **Pulsing**: Constant low-level baseline spend with intense seasonal multiplier bursts during festive windows (Diwali, Q4).
+`,
+  },
+  {
+    id: 'influencer-guardrails',
+    title: 'Influencer Collaboration Contract Guardrails',
+    format: 'Legal & Strategic Guide',
+    desc: 'Checklist of non-negotiable clauses: exclusivity windows, usage rights duration, and FTC/ASCI compliance.',
+    filename: 'marketecture-influencer-contract-guardrails.md',
+    content: `# INFLUENCER COLLABORATION STRATEGIC CONTRACT GUARDRAILS
+**Compliance**: ASCI (Advertising Standards Council of India) & FTC Guidelines
+
+---
+
+## 1. NON-NEGOTIABLE CONTRACTUAL CLAUSES
+1. **Clear Regulatory Disclosures**:
+   - Influencer MUST use platform disclosure toggles (#ad, #collab, "Paid Partnership with [Brand]").
+   - Disclosures must be super-imposed within the first 3 seconds of video and placed before the "more" cutoff in caption text.
+
+2. **Category Exclusivity Window**:
+   - Influencer warrants they will not endorse, feature, or mention direct competitors in the same category for 30 days prior and 60 days following campaign air date.
+
+3. **Paid Amplification & Dark Post Rights (Whitelisting)**:
+   - Contract must explicitly include: "Brand retains the royalty-free, worldwide license to run Meta Partnership Ads and Spark Ads from Creator's handle for a duration of 90 days."
+
+4. **Brand Safety & Moral Hazard Clause**:
+   - Immediate termination and full clawback of remuneration if the Creator engages in hate speech, political controversy, or criminal proceedings.
+`,
+  },
+  {
+    id: 'brand-pyramid',
+    title: 'Brand Pyramid & Architecture Guide',
+    format: 'Strategic Framework',
+    desc: 'Step-by-step workbook translating product features into emotional rewards and central brand essence.',
+    filename: 'marketecture-brand-pyramid-guide.md',
+    content: `# BRAND ARCHITECTURE & PYRAMID GUIDE
+**Framework**: 5-Tier Strategic Brand Equity Hierarchy
+
+---
+
+## LEVEL 5: BRAND ESSENCE (THE HEART & SOUL)
+> **The North Star**: One singular 2-3 word concept that defines why the brand exists in culture.
+> *Examples: Nike = "Authentic Athletic Performance" | Apple = "Empowering Creative Rebellion" | Amul = "The Taste of India"*
+
+## LEVEL 4: BRAND PERSONALITY & ARCHETYPE
+- Primary Archetype: [The Hero / The Outlaw / The Creator / The Everyman]
+- Human Traits: If this brand walked into a room, how would they dress, speak, and interact?
+
+## LEVEL 3: EMOTIONAL BENEFITS (HOW THE CUSTOMER FEELS)
+- What emotional transformation takes place when using this product?
+- "I feel confident, unburdened, and in command of my destiny."
+
+## LEVEL 2: FUNCTIONAL BENEFITS (WHAT THE PRODUCT DOES)
+- Direct customer problem solved:
+- Saves 45 minutes of daily admin; eliminates audio latency; keeps milk fresh for 48 hours without refrigeration.
+
+## LEVEL 1: PRODUCT ATTRIBUTES & FEATURES (WHAT IT HAS)
+- Physical components, proprietary technology, raw materials, clinical patents.
+`,
+  },
+];
 
 export default function ToolsContent() {
   const [activeTab, setActiveTab] = useState<'calculators' | 'budget-planner' | 'seo-checklist' | 'templates'>('calculators');
+  const [activeBlueprint, setActiveBlueprint] = useState<BlueprintItem | null>(null);
+  const [downloadToast, setDownloadToast] = useState<string | null>(null);
+
+  const handleDownloadBlueprint = (blueprint: BlueprintItem) => {
+    try {
+      const blob = new Blob([blueprint.content], { type: 'text/markdown;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = blueprint.filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      setDownloadToast(`Saved ${blueprint.filename}`);
+      setTimeout(() => setDownloadToast(null), 4000);
+    } catch {
+      setActiveBlueprint(blueprint);
+    }
+  };
 
   // Calculator 1: CTR
   const [ctrClicks, setCtrClicks] = useState<string>('2400');
@@ -624,58 +851,110 @@ export default function ToolsContent() {
 
       {/* TAB 4: DOWNLOADABLE FRAMEWORKS */}
       {activeTab === 'templates' && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            {
-              title: 'Master Creative Brief Canvas',
-              format: 'PDF / Markdown',
-              desc: 'The single-page brief standard used by global creative agencies to align clients, strategists, and creatives.',
-            },
-            {
-              title: 'Annual Omnichannel Content Calendar',
-              format: 'Spreadsheet Template',
-              desc: '52-week thematic editorial flighting schedule with platform-specific content pillar tagging.',
-            },
-            {
-              title: 'Competitor Whitespace Matrix',
-              format: 'Analysis Canvas',
-              desc: 'Perceptual positioning worksheet to identify untapped market opportunities across pricing and prestige.',
-            },
-            {
-              title: 'Media Flighting & Budget Allocation Sheet',
-              format: 'Excel / Sheets',
-              desc: 'Formula-enabled spreadsheet incorporating the 60/40 rule and marginal CAC diminishing returns curves.',
-            },
-            {
-              title: 'Influencer Collaboration Contract Guardrails',
-              format: 'Legal & Strategic Guide',
-              desc: 'Checklist of non-negotiable clauses: exclusivity windows, usage rights duration, and FTC/ASCI compliance.',
-            },
-            {
-              title: 'Brand Pyramid & Architecture Guide',
-              format: 'Strategic Framework',
-              desc: 'Step-by-step workbook translating product features into emotional rewards and central brand essence.',
-            },
-          ].map((t) => (
-            <div
-              key={t.title}
-              className="bg-white p-6 rounded-sm border border-navy/10 hover:border-orange/50 hover:shadow-md transition-all flex flex-col justify-between"
-            >
-              <div>
-                <span className="text-[10px] font-mono text-orange uppercase tracking-wider block mb-2">
-                  {t.format}
-                </span>
-                <h4 className="font-heading font-bold text-base text-navy mb-2">{t.title}</h4>
-                <p className="text-xs text-muted leading-relaxed">{t.desc}</p>
+        <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {BLUEPRINTS.map((t) => (
+              <div
+                key={t.title}
+                className="bg-white p-6 rounded-sm border border-navy/10 hover:border-orange/50 hover:shadow-md transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-[10px] font-mono text-orange uppercase tracking-wider block mb-2">
+                    {t.format}
+                  </span>
+                  <h4 className="font-heading font-bold text-base text-navy mb-2">{t.title}</h4>
+                  <p className="text-xs text-muted leading-relaxed">{t.desc}</p>
+                </div>
+                <div className="pt-6 border-t border-navy/5 mt-6 flex items-center justify-between gap-2">
+                  <button
+                    onClick={() => handleDownloadBlueprint(t)}
+                    className="flex items-center gap-1.5 text-xs font-heading font-semibold text-orange hover:text-white bg-orange/10 hover:bg-orange px-3 py-1.5 rounded transition-all"
+                  >
+                    <Download className="w-3.5 h-3.5" /> Download Blueprint
+                  </button>
+                  <button
+                    onClick={() => setActiveBlueprint(t)}
+                    className="text-xs font-heading font-semibold text-navy/60 hover:text-navy hover:bg-navy/5 px-2.5 py-1.5 rounded transition-all flex items-center gap-1"
+                    title="Preview blueprint text"
+                  >
+                    <Eye className="w-3.5 h-3.5" /> Preview
+                  </button>
+                </div>
               </div>
-              <div className="pt-6 border-t border-navy/5 mt-6 flex items-center justify-between text-xs font-heading font-semibold text-orange">
-                <span className="flex items-center gap-1.5">
-                  <Download className="w-3.5 h-3.5" /> Download Blueprint
-                </span>
-                <span className="text-[10px] text-muted">v2.4 Editorial</span>
+            ))}
+          </div>
+
+          {/* Toast Notification when Downloaded */}
+          <AnimatePresence>
+            {downloadToast && (
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 15 }}
+                className="fixed bottom-6 right-6 z-50 bg-navy text-ivory border border-orange/40 shadow-2xl p-4 rounded-md flex items-center gap-3 max-w-md"
+              >
+                <div className="w-8 h-8 rounded-full bg-orange/20 text-orange flex items-center justify-center shrink-0">
+                  <Check className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-xs font-heading font-bold text-white">Blueprint Downloaded</div>
+                  <div className="text-[11px] text-muted">{downloadToast}</div>
+                </div>
+                <button
+                  onClick={() => setDownloadToast(null)}
+                  className="p-1 text-ivory/60 hover:text-white rounded-full hover:bg-white/10 ml-auto"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Modal Preview */}
+          <AnimatePresence>
+            {activeBlueprint && (
+              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  className="bg-white border border-navy/20 rounded-md max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden"
+                >
+                  <div className="p-5 border-b border-navy/10 flex items-center justify-between bg-ivory">
+                    <div>
+                      <span className="text-[10px] font-mono text-orange uppercase tracking-wider block">
+                        {activeBlueprint.format}
+                      </span>
+                      <h3 className="font-heading font-bold text-lg text-navy">
+                        {activeBlueprint.title}
+                      </h3>
+                    </div>
+                    <button
+                      onClick={() => setActiveBlueprint(null)}
+                      className="p-2 text-navy/60 hover:text-navy rounded-full hover:bg-navy/5"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <div className="p-6 overflow-y-auto font-mono text-xs text-navy/85 bg-white whitespace-pre-wrap leading-relaxed select-text">
+                    {activeBlueprint.content}
+                  </div>
+                  <div className="p-4 border-t border-navy/10 bg-ivory flex items-center justify-between">
+                    <span className="text-xs text-muted font-mono">{activeBlueprint.filename}</span>
+                    <button
+                      onClick={() => {
+                        handleDownloadBlueprint(activeBlueprint);
+                        setActiveBlueprint(null);
+                      }}
+                      className="btn-primary text-xs py-2 px-4 flex items-center gap-1.5"
+                    >
+                      <Download className="w-3.5 h-3.5" /> Download .md File
+                    </button>
+                  </div>
+                </motion.div>
               </div>
-            </div>
-          ))}
+            )}
+          </AnimatePresence>
         </div>
       )}
     </div>

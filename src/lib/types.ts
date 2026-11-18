@@ -8,6 +8,7 @@ export interface WPPost {
   date: string;
   modified: string;
   featured_media: number;
+  jetpack_featured_media_url?: string;
   categories: number[];
   tags: number[];
   author: number;

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 55" fill="none">
+  <!-- Coca-Cola Spencerian script typography -->
+  <text x="6" y="34" font-family="'Brush Script MT', 'Bickham Script Pro', cursive, 'Georgia', serif" font-weight="700" font-size="34" fill="#F40000" font-style="italic" letter-spacing="1">Coca-Cola</text>
+  <path d="M6 40C30 46 80 47 130 38C150 34 165 31 165 31" stroke="#F40000" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

@@ -12,6 +12,7 @@ interface CampaignArticleProps {
   date: string;
   content: string;
   slug: string;
+  featuredImage?: string;
 }
 
 export default function CampaignArticle({
@@ -20,6 +21,7 @@ export default function CampaignArticle({
   date,
   content,
   slug,
+  featuredImage,
 }: CampaignArticleProps) {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [copied, setCopied] = useState(false);
@@ -85,6 +87,17 @@ export default function CampaignArticle({
           </h1>
 
           <div className="accent-line mb-10" />
+
+          {/* Featured Hero Banner */}
+          {featuredImage && (
+            <div className="relative aspect-video w-full overflow-hidden rounded-md border border-navy/10 mb-10 shadow-sm bg-navy/5">
+              <img
+                src={featuredImage}
+                alt={title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
 
           {/* Action Bar */}
           <div className="flex items-center justify-between pb-8 mb-12 border-b border-navy/10 text-xs text-muted">

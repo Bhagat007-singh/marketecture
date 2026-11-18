@@ -13,6 +13,7 @@ interface FallbackCampaign {
   date: string;
   excerpt: string;
   content: string;
+  featuredImage?: string;
 }
 
 const fallbackStudies: Record<string, FallbackCampaign> = {
@@ -20,6 +21,7 @@ const fallbackStudies: Record<string, FallbackCampaign> = {
     title: 'The Amul Girl: Topical Advertising and Cultural Relevance',
     category: 'Indian Campaigns',
     date: '2024-03-15T00:00:00',
+    featuredImage: '/images/campaigns/amul-hero.jpg',
     excerpt:
       'How Amul created India’s longest-running advertising icon, turning dairy hoardings into a national voice for sociopolitical satire and cultural commentary since 1966.',
     content: `
@@ -90,6 +92,7 @@ const fallbackStudies: Record<string, FallbackCampaign> = {
     title: 'Share a Coke: Personalisation as a Global Brand Experience',
     category: 'Global Campaigns',
     date: '2024-03-10T00:00:00',
+    featuredImage: '/images/campaigns/coke-hero.jpg',
     excerpt:
       'By swapping its world-famous logo with popular first names, Coca-Cola turned a mass-market pack into a personal message, driving 11% sales growth and 1.25M new teen trials.',
     content: `
@@ -159,6 +162,7 @@ const fallbackStudies: Record<string, FallbackCampaign> = {
     title: 'Zomato: Conversational Humour & Push Notification Dominance',
     category: 'Indian Campaigns',
     date: '2024-03-05T00:00:00',
+    featuredImage: '/images/campaigns/zomato-hero.jpg',
     excerpt:
       'Decoding how Zomato redefined CRM and social media engagement from promotional discounts into culturally attuned, self-deprecating meme entertainment.',
     content: `
@@ -200,6 +204,7 @@ const fallbackStudies: Record<string, FallbackCampaign> = {
     title: 'Nike: The 35-Year Evolution of "Just Do It"',
     category: 'Global Campaigns',
     date: '2024-02-28T00:00:00',
+    featuredImage: '/images/campaigns/nike-hero.jpg',
     excerpt:
       'From a simple motivational line to the world\'s most powerful brand platform spanning four decades of cultural rebellion and heroic determination.',
     content: `
@@ -241,6 +246,7 @@ const fallbackStudies: Record<string, FallbackCampaign> = {
     title: 'Paper Boat: Sensory Memory and Emotional Branding',
     category: 'Indian Campaigns',
     date: '2024-02-20T00:00:00',
+    featuredImage: '/images/campaigns/paperboat-hero.jpg',
     excerpt:
       'Hector Beverages bypassed the fizzy soda giants by reviving childhood memory drinks packaged in tactile pouches with evocative poetic copy.',
     content: `
@@ -282,6 +288,7 @@ const fallbackStudies: Record<string, FallbackCampaign> = {
     title: 'Apple: "Think Different" and the Alchemy of Brand Salvation',
     category: 'Global Campaigns',
     date: '2024-02-14T00:00:00',
+    featuredImage: '/images/campaigns/apple-hero.jpg',
     excerpt:
       'In 1997, 90 days from bankruptcy, Steve Jobs and TBWA\\Chiat\\Day launched an ad campaign without showing a single computer product, resurrecting Apple\'s identity.',
     content: `
@@ -323,6 +330,7 @@ const fallbackStudies: Record<string, FallbackCampaign> = {
     title: 'Blinkit: The 10-Minute Quick Commerce Revolution & Viral Billboard Banter',
     category: 'Indian Campaigns',
     date: '2024-03-18T00:00:00',
+    featuredImage: '/images/campaigns/blinkit-hero.jpg',
     excerpt:
       'How Blinkit pivoted from Grofers into India’s dominant 10-minute delivery titan, turning urgent household cravings into compounding habit loops and nationwide billboard banter.',
     content: `
@@ -365,6 +373,7 @@ const fallbackStudies: Record<string, FallbackCampaign> = {
     title: 'boAt: Building a Youth-Centred Lifestyle Audio Brand',
     category: 'Indian Campaigns',
     date: '2024-04-10T00:00:00',
+    featuredImage: '/images/campaigns/boat-hero.jpg',
     excerpt:
       'How boAt transformed functional audio accessories into a youth lifestyle symbol, combining accessible pricing, celebrity associations, and 360M+ campaign impressions.',
     content: `
@@ -433,6 +442,7 @@ const fallbackStudies: Record<string, FallbackCampaign> = {
     title: 'Zepto: Marketing Speed in India’s Quick-Commerce Market',
     category: 'Indian Campaigns',
     date: '2024-04-12T00:00:00',
+    featuredImage: '/images/campaigns/zepto-hero.jpg',
     excerpt:
       'How Zepto carved an undisputed 10-minute delivery proposition in India’s crowded online grocery market through dark-store density, viral street hoardings, and cultural agility.',
     content: `
@@ -502,6 +512,7 @@ const fallbackStudies: Record<string, FallbackCampaign> = {
     title: 'Inshorts: Turning News Brevity into a Digital Product',
     category: 'Indian Campaigns',
     date: '2024-04-15T00:00:00',
+    featuredImage: '/images/campaigns/inshorts-hero.jpg',
     excerpt:
       'How three college students built India’s most distinctive news app by constraining every story to 60 words, creating an addictive swipeable habit loop and native ad engine.',
     content: `
@@ -567,6 +578,28 @@ const fallbackStudies: Record<string, FallbackCampaign> = {
       4. Livemint – <em>"Inshorts Plans Subscription and Native Advertising Models"</em></p>
     `,
   },
+  'marketing-circle-introductions': {
+    title: 'Marketecture Marketing Circle: Introductions & Strategic Community Ideas',
+    category: 'Community & Peer Learning',
+    date: '2024-04-20T00:00:00',
+    featuredImage: '/images/vault/vault-creative.jpg',
+    excerpt:
+      'Welcome to the Marketecture Marketing Circle: an open forum for marketing architects, strategists, and founders to exchange teardowns and campaign hypotheses.',
+    content: `
+      <p><strong>MARKETECTURE COMMUNITY • MARKETING CIRCLE • STRATEGIC ROUNDTABLE</strong></p>
+      <p>The Marketecture Marketing Circle is a dedicated intellectual space for marketing architects, brand leaders, growth practitioners, and students to debate emerging campaign mechanics, deconstruct new brand playbooks, and share field observations.</p>
+      <h2>01 | Purpose &amp; Editorial Standard</h2>
+      <p>Our community operates under the same rigorous standard as our published case studies: every insight must be grounded in real consumer truths, verifiable business mechanics, and clear strategic frameworks.</p>
+      <h2>02 | Core Discussion Threads</h2>
+      <ul>
+        <li><strong>Indian Breakout Tactics:</strong> Analyzing hyper-local quick-commerce logistics, festival surge marketing, and regional vernacular messaging.</li>
+        <li><strong>Global Platform Architecture:</strong> Deconstructing multinational brand governance, global tone of voice, and cross-border creative adaptation.</li>
+        <li><strong>AI Strategy &amp; Growth Mechanics:</strong> Implementing generative copy workflows, predictive audience modeling, and prompt engineering in high-scale performance marketing.</li>
+      </ul>
+      <h2>03 | Contribution Guidelines</h2>
+      <p>All members are encouraged to share campaign suggestions, submit student teardowns, and critique published analyses. Join the discussion on our open editorial platforms or reach out directly to the editorial team.</p>
+    `,
+  },
 };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -574,6 +607,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (post) {
     const title = decodeHTMLEntities(post.title.rendered);
     const description = stripHTML(decodeHTMLEntities(post.excerpt.rendered)).slice(0, 160);
+    const featuredMedia =
+      post.jetpack_featured_media_url ||
+      post._embedded?.['wp:featuredmedia']?.[0]?.source_url ||
+      fallbackStudies[params.slug]?.featuredImage;
     return {
       title: `${title} — MARKETECTURE Case Study`,
       description,
@@ -582,6 +619,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         description,
         type: 'article',
         publishedTime: post.date,
+        ...(featuredMedia ? { images: [featuredMedia] } : {}),
       },
     };
   }
@@ -596,6 +634,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         description: fallback.excerpt,
         type: 'article',
         publishedTime: fallback.date,
+        ...(fallback.featuredImage ? { images: [fallback.featuredImage] } : {}),
       },
     };
   }
@@ -635,6 +674,10 @@ export default async function CampaignDetailPage({ params }: PageProps) {
     const title = decodeHTMLEntities(post.title.rendered);
     const categories = post._embedded?.['wp:term']?.[0];
     const categoryName = categories?.[0]?.name || 'Campaign Case Study';
+    const featuredMedia =
+      post.jetpack_featured_media_url ||
+      post._embedded?.['wp:featuredmedia']?.[0]?.source_url ||
+      fallbackStudies[params.slug]?.featuredImage;
 
     return (
       <div className="bg-ivory min-h-screen">
@@ -644,6 +687,7 @@ export default async function CampaignDetailPage({ params }: PageProps) {
           category={categoryName}
           date={post.date}
           content={post.content.rendered}
+          featuredImage={featuredMedia}
         />
       </div>
     );
@@ -659,6 +703,7 @@ export default async function CampaignDetailPage({ params }: PageProps) {
           category={fallback.category}
           date={fallback.date}
           content={fallback.content}
+          featuredImage={fallback.featuredImage}
         />
       </div>
     );

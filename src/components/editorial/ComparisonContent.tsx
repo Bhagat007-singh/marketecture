@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SplitSquareVertical, ArrowRight, ShieldCheck, Check, Sparkles } from 'lucide-react';
 
@@ -9,6 +10,7 @@ interface ComparisonData {
   category: string;
   brandA: {
     name: string;
+    slug?: string;
     origin: string;
     tagline: string;
     positioning: string;
@@ -20,6 +22,7 @@ interface ComparisonData {
   };
   brandB: {
     name: string;
+    slug?: string;
     origin: string;
     tagline: string;
     positioning: string;
@@ -38,6 +41,7 @@ const matchupsData: ComparisonData[] = [
     category: 'Dairy & Confectionery',
     brandA: {
       name: 'Amul',
+      slug: 'amul-girl-topical-advertising',
       origin: 'India (Gujarat Cooperative)',
       tagline: 'The Taste of India',
       positioning: 'Nation-building cooperative staple delivering accessible, pure dairy to every socioeconomic strata.',
@@ -66,6 +70,7 @@ const matchupsData: ComparisonData[] = [
     category: 'Consumer Lifestyle Audio',
     brandA: {
       name: 'boAt',
+      slug: 'boat-youth-lifestyle-audio',
       origin: 'India (D2C / Hardware)',
       tagline: 'Do What Floats Your boAt',
       positioning: 'Democratised bass-heavy lifestyle tech engineered for young, aspirational Indian digital natives.',
@@ -150,6 +155,7 @@ const matchupsData: ComparisonData[] = [
     category: 'Food Tech & Discovery',
     brandA: {
       name: 'Zomato',
+      slug: 'zomato-social-media-humour',
       origin: 'India (Gurugram)',
       tagline: 'Never Have a Bad Meal',
       positioning: 'Pop-culture foodie companion combining restaurant discovery, food delivery, and dining out entertainment.',
@@ -224,34 +230,60 @@ export default function ComparisonContent() {
 
         {/* Side-by-Side Brand Column Headers */}
         <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-navy/10 border-b border-navy/10 bg-ivory/50">
-          <div className="p-6 md:p-8">
-            <span className="text-xs font-heading font-bold uppercase tracking-widest text-orange block mb-1">
-              Indian Benchmark
-            </span>
-            <h3 className="text-2xl font-heading font-bold text-navy mb-1">
-              {selectedMatchup.brandA.name}
-            </h3>
-            <p className="text-xs text-muted font-mono mb-2">
-              Origin: {selectedMatchup.brandA.origin}
-            </p>
-            <p className="text-xs font-heading italic text-navy/80">
-              &ldquo;{selectedMatchup.brandA.tagline}&rdquo;
-            </p>
+          <div className="p-6 md:p-8 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-heading font-bold uppercase tracking-widest text-orange">
+                  Indian Benchmark
+                </span>
+                {selectedMatchup.brandA.slug && (
+                  <Link
+                    href={`/campaigns/${selectedMatchup.brandA.slug}`}
+                    className="inline-flex items-center gap-1 text-[11px] font-heading font-semibold text-orange hover:text-white bg-orange/10 hover:bg-orange px-2.5 py-1 rounded transition-colors"
+                  >
+                    <span>Read Teardown</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </Link>
+                )}
+              </div>
+              <h3 className="text-2xl font-heading font-bold text-navy mb-1">
+                {selectedMatchup.brandA.name}
+              </h3>
+              <p className="text-xs text-muted font-mono mb-2">
+                Origin: {selectedMatchup.brandA.origin}
+              </p>
+              <p className="text-xs font-heading italic text-navy/80">
+                &ldquo;{selectedMatchup.brandA.tagline}&rdquo;
+              </p>
+            </div>
           </div>
 
-          <div className="p-6 md:p-8">
-            <span className="text-xs font-heading font-bold uppercase tracking-widest text-navy/60 block mb-1">
-              Global Counterpart
-            </span>
-            <h3 className="text-2xl font-heading font-bold text-navy mb-1">
-              {selectedMatchup.brandB.name}
-            </h3>
-            <p className="text-xs text-muted font-mono mb-2">
-              Origin: {selectedMatchup.brandB.origin}
-            </p>
-            <p className="text-xs font-heading italic text-navy/80">
-              &ldquo;{selectedMatchup.brandB.tagline}&rdquo;
-            </p>
+          <div className="p-6 md:p-8 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-heading font-bold uppercase tracking-widest text-navy/60">
+                  Global Counterpart
+                </span>
+                {selectedMatchup.brandB.slug && (
+                  <Link
+                    href={`/campaigns/${selectedMatchup.brandB.slug}`}
+                    className="inline-flex items-center gap-1 text-[11px] font-heading font-semibold text-orange hover:text-white bg-orange/10 hover:bg-orange px-2.5 py-1 rounded transition-colors"
+                  >
+                    <span>Read Teardown</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </Link>
+                )}
+              </div>
+              <h3 className="text-2xl font-heading font-bold text-navy mb-1">
+                {selectedMatchup.brandB.name}
+              </h3>
+              <p className="text-xs text-muted font-mono mb-2">
+                Origin: {selectedMatchup.brandB.origin}
+              </p>
+              <p className="text-xs font-heading italic text-navy/80">
+                &ldquo;{selectedMatchup.brandB.tagline}&rdquo;
+              </p>
+            </div>
           </div>
         </div>
 
