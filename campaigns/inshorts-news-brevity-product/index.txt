@@ -1,0 +1,72 @@
+3:I[4707,[],""]
+5:I[6423,[],""]
+6:I[9551,["216","static/chunks/216-94a9579dc3a95654.js","521","static/chunks/521-b53316ac963015d8.js","185","static/chunks/app/layout-5708c1e2f5f8a6c2.js"],"default"]
+7:I[1689,["216","static/chunks/216-94a9579dc3a95654.js","521","static/chunks/521-b53316ac963015d8.js","185","static/chunks/app/layout-5708c1e2f5f8a6c2.js"],"default"]
+8:I[6230,["216","static/chunks/216-94a9579dc3a95654.js","521","static/chunks/521-b53316ac963015d8.js","185","static/chunks/app/layout-5708c1e2f5f8a6c2.js"],"default"]
+4:["slug","inshorts-news-brevity-product","d"]
+0:["BqpShkD8FwEBqbUMvqofH",[[["",{"children":["campaigns",{"children":[["slug","inshorts-news-brevity-product","d"],{"children":["__PAGE__?{\"slug\":\"inshorts-news-brevity-product\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["campaigns",{"children":[["slug","inshorts-news-brevity-product","d"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","campaigns","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","campaigns","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/marketecture/_next/static/css/45040e036dfbf2fa.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_9d862b __variable_3b37b8","children":["$","body",null,{"className":"font-body antialiased","children":[["$","$L6",null,{}],["$","$L7",null,{}],["$","main",null,{"className":"min-h-screen","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}],["$","$L8",null,{}]]}]}]],null],null],["$L9",null]]]]
+a:I[6207,["216","static/chunks/216-94a9579dc3a95654.js","705","static/chunks/705-2dd30147321d3968.js","816","static/chunks/app/campaigns/%5Bslug%5D/page-cd46b8c5e912c2d3.js"],"default"]
+b:T1aff,
+      <p><strong>INDIAN CAMPAIGN CASE STUDY • BRAND: INSHORTS • FORMAT: PRODUCT-LED POSITIONING &amp; SHORT-FORM JOURNALISM</strong></p>
+      <p>Inshorts is an Indian digital media platform known for summarizing complex news stories into exactly 60 words. In an era plagued by sensational clickbait, infinite social media feeds, and reader fatigue, Inshorts proved that product constraints—specifically radical brevity—can become a brand's greatest positioning asset.</p>
+
+      <h2>01 | Executive Overview</h2>
+      <p>The concept originated in 2013 as a humble Facebook page titled "News in Shorts," created by three IIT students: Azhar Iqubal, Deepit Purkayastha, and Anunay Arunav. Observing that their peers had completely stopped reading 1,000-word newspaper editorials yet still wanted to stay informed, they developed a swipeable mobile app that delivered the core facts of any story in 60 words or fewer, with a direct link to the original news publisher for readers who wanted deeper context. In 2019, the group extended this brief, local information thesis by launching <strong>Public</strong>, a location-based video app for Tier 2, Tier 3, and rural India.</p>
+
+      <h2>02 | Marketing Objectives</h2>
+      <ul>
+        <li><strong>Objective 1:</strong> Make news consumption effortless, rapid, and friction-free on small mobile screens.</li>
+        <li><strong>Objective 2:</strong> Cultivate a daily ritual and habit loop among college students and young working professionals.</li>
+        <li><strong>Objective 3:</strong> Sharply differentiate from long-form legacy media portals (Times of India, NDTV) and noisy, uncurated social media timelines.</li>
+        <li><strong>Objective 4:</strong> Monetize mobile user attention via high-performing native advertising cards without destroying editorial trust or user experience.</li>
+      </ul>
+
+      <h2>03 | Audience &amp; Strategic Positioning</h2>
+      <p><strong>Target Audience:</strong> Time-poor urban digital natives, college students preparing for competitive exams, corporate executives, and regional smartphone users seeking verified updates.</p>
+      <p><strong>Positioning Statement:</strong> <em>"INSHORTS seeks to be remembered for a clear, distinctive value: a quick news format built for mobile attention. 60 words. One story."</em> Inshorts avoided expensive broadcast advertising campaigns by making the product's UX its primary promotional hook: the 60-word card format is the brand.</p>
+
+      <h2>04 | Campaign Analysis &amp; Product Architecture</h2>
+      <ul>
+        <li><strong>The 60-Word News Card Format:</strong> Every article consists of a headline, a 60-word factual summary containing no personal editorial bias, and a vertical swipe-up gesture to advance to the next story. Swiping left opens the full source article.</li>
+        <li><strong>Native Advertising as Editorial Content:</strong> Rather than intrusive pop-up banners, Inshorts pioneered 60-word sponsored brand cards that mirror editorial cards in font, layout, and visual tone while remaining clearly labeled as "Sponsored." Brands achieve click-through rates up to 4× higher than standard mobile display ads. (Compare with <a href="/campaigns/zomato-social-media-humour" class="text-[#F28C38] underline font-semibold">Zomato's conversational push CRM</a>).</li>
+        <li><strong>Public (Hyperlocal Video Network):</strong> Launched in 2019, Public democratized local district and tehsil reporting through short citizen-led videos. A Google Cloud case study documents that Public reached over <strong>10 million users in just six months</strong>, demonstrating how brevity translates across languages and geographical tiers.</li>
+      </ul>
+
+      <h2>05 | Illustrative Customer Journey</h2>
+      <ul>
+        <li><strong>Discover:</strong> Commuter downloads Inshorts during a friend's recommendation to prepare for current affairs interviews.</li>
+        <li><strong>Engage:</strong> User swipes through 15 stories in 2 minutes while waiting for an elevator or during a quick coffee break.</li>
+        <li><strong>Act:</strong> User shares a 60-word summary card directly to their WhatsApp story or group chat with attribution.</li>
+        <li><strong>Remember:</strong> Inshorts becomes the muscle-memory app for brief downtime throughout the day.</li>
+      </ul>
+
+      <h2>06 | Consumer Insights &amp; Market Evidence</h2>
+      <ul>
+        <li><strong>Format Distinctiveness Outweighs Slogans:</strong> A proprietary, functional product format creates deeper brand memorability than an advertising catchphrase.</li>
+        <li><strong>Friction Reduction Drives Daily Habit Loops:</strong> Low time commitment + simple vertical swiping = 5–10 app openings per user per day.</li>
+        <li><strong>Academic &amp; Industry Recognition:</strong> An Oxford Academic publication (2023) highlighted Inshorts as one of India's most successful short-form journalism platforms, analyzing its transformation from a college social page to a profitable media technology enterprise.</li>
+      </ul>
+
+      <h2>07 | SWOT Analysis</h2>
+      <ul>
+        <li><strong>Strengths:</strong> Highly distinctive format; intense daily user retention; seamless native ad monetization; low bandwidth consumption.</li>
+        <li><strong>Weaknesses:</strong> 60-word limits inherently sacrifice nuanced analysis and investigative depth; heavy reliance on third-party publishers for raw reporting.</li>
+        <li><strong>Opportunities:</strong> Algorithmic topic personalization, multilingual regional translations, audio podcasts / AI narration, and micro-subscriptions.</li>
+        <li><strong>Threats:</strong> Competition for screen time from Instagram Reels and YouTube Shorts; shifting social algorithms; consumer skepticism toward digital media integrity.</li>
+      </ul>
+
+      <h2>08 | Strategic Learnings</h2>
+      <ul>
+        <li><strong>Build Around Audience Constraints:</strong> Design your product around how people actually live and the exact minutes they have available.</li>
+        <li><strong>Preserve Source Attribution &amp; Truth:</strong> In news summarization, link to the full original source to protect credibility and publisher trust.</li>
+        <li><strong>Protect UX During Monetization:</strong> Native ads only succeed when they respect the user's reading flow rather than bombarding them with invasive pop-ups.</li>
+      </ul>
+
+      <h2>09 | Source References</h2>
+      <p>1. Oxford Academic – <em>"Inshorts: A Success Story of Short-Form Journalism in India"</em> (2023)<br/>
+      2. Google Cloud Customer Stories – <em>"Inshorts and Public Platform Scalability Case Study"</em><br/>
+      3. WAN-IFRA – <em>"How Inshorts Used AI to Become One of India's Top News Apps"</em><br/>
+      4. Livemint – <em>"Inshorts Plans Subscription and Native Advertising Models"</em></p>
+    2:["$","div",null,{"className":"bg-ivory min-h-screen","children":["$","$La",null,{"slug":"inshorts-news-brevity-product","title":"Inshorts: Turning News Brevity into a Digital Product","category":"Indian Campaigns","date":"2024-04-15T00:00:00","content":"$b"}]}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"name":"theme-color","content":"#F28C38"}],["$","meta","2",{"charSet":"utf-8"}],["$","title","3",{"children":"Inshorts: Turning News Brevity into a Digital Product — MARKETECTURE Case Study"}],["$","meta","4",{"name":"description","content":"How three college students built India’s most distinctive news app by constraining every story to 60 words, creating an addictive swipeable habit loop and native ad engine."}],["$","meta","5",{"name":"author","content":"MARKETECTURE"}],["$","meta","6",{"name":"keywords","content":"marketing,campaigns,strategy,Indian marketing,global marketing,brand strategy,marketing tools,AI marketing"}],["$","meta","7",{"name":"msapplication-TileColor","content":"#F28C38"}],["$","meta","8",{"property":"og:title","content":"Inshorts: Turning News Brevity into a Digital Product"}],["$","meta","9",{"property":"og:description","content":"How three college students built India’s most distinctive news app by constraining every story to 60 words, creating an addictive swipeable habit loop and native ad engine."}],["$","meta","10",{"property":"og:type","content":"article"}],["$","meta","11",{"property":"article:published_time","content":"2024-04-15T00:00:00"}],["$","meta","12",{"name":"twitter:card","content":"summary"}],["$","meta","13",{"name":"twitter:title","content":"Inshorts: Turning News Brevity into a Digital Product"}],["$","meta","14",{"name":"twitter:description","content":"How three college students built India’s most distinctive news app by constraining every story to 60 words, creating an addictive swipeable habit loop and native ad engine."}]]
+1:null
