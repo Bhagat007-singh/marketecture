@@ -1,0 +1,44 @@
+3:I[4707,[],""]
+5:I[6423,[],""]
+6:I[9551,["216","static/chunks/216-94a9579dc3a95654.js","521","static/chunks/521-b53316ac963015d8.js","185","static/chunks/app/layout-04fc444442dc04d0.js"],"default"]
+7:I[1689,["216","static/chunks/216-94a9579dc3a95654.js","521","static/chunks/521-b53316ac963015d8.js","185","static/chunks/app/layout-04fc444442dc04d0.js"],"default"]
+8:I[6230,["216","static/chunks/216-94a9579dc3a95654.js","521","static/chunks/521-b53316ac963015d8.js","185","static/chunks/app/layout-04fc444442dc04d0.js"],"default"]
+4:["slug","nike-just-do-it-evolution","d"]
+0:["uC2E0VwDqnjtAVWJbnRoo",[[["",{"children":["campaigns",{"children":[["slug","nike-just-do-it-evolution","d"],{"children":["__PAGE__?{\"slug\":\"nike-just-do-it-evolution\"}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["campaigns",{"children":[["slug","nike-just-do-it-evolution","d"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","campaigns","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","campaigns","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/marketecture/_next/static/css/c2262040ceeb70a0.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_9d862b __variable_3b37b8","children":["$","body",null,{"className":"font-body antialiased","children":[["$","$L6",null,{}],["$","$L7",null,{}],["$","main",null,{"className":"min-h-screen","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}],["$","$L8",null,{}]]}]}]],null],null],["$L9",null]]]]
+a:I[6207,["216","static/chunks/216-94a9579dc3a95654.js","705","static/chunks/705-2dd30147321d3968.js","816","static/chunks/app/campaigns/%5Bslug%5D/page-151c094cde4c313a.js"],"default"]
+b:Td67,
+      <p><strong>GLOBAL CAMPAIGN CASE STUDY • BRAND: NIKE • FORMAT: BRAND PLATFORM</strong></p>
+      <p>Coined in 1988 by Dan Wieden of Wieden+Kennedy, "Just Do It" is widely regarded as one of the most commercially and culturally impactful brand platforms in advertising history.</p>
+      <h2>1. Brand Introduction</h2>
+      <p>Nike, Inc. (headquartered in Beaverton, Oregon) is the world's leading designer and marketer of athletic footwear, apparel, equipment, and accessories.</p>
+      <h2>2. Business Background &amp; Challenge</h2>
+      <p>In 1987, Reebok had overtaken Nike in U.S. sneaker sales by capitalizing on the aerobics fitness craze. Nike was perceived as an insular brand catering only to elite male marathon runners.</p>
+      <h2>3. Marketing Objectives</h2>
+      <p>Broaden appeal to universal fitness enthusiasts regardless of age, gender, or athletic capability, while cementing Nike's authentic sports performance credibility.</p>
+      <h2>4. Target Audience</h2>
+      <p>Every human being with a body ("If you have a body, you are an athlete" — Bill Bowerman), from weekend joggers to world-champion Olympians.</p>
+      <h2>5. Consumer Insight</h2>
+      <p>Everyone battles internal procrastination, self-doubt, and inertia. The athletic struggle is universal; getting out of bed at 6:00 AM to run is an act of everyday heroism.</p>
+      <h2>6. Campaign Idea &amp; Platform</h2>
+      <p><strong>Just Do It:</strong> An imperative moral call-to-action that cuts through mental excuses and elevates personal willpower.</p>
+      <h2>7. Creative Execution</h2>
+      <p>The campaign debuted with 80-year-old Walt Stack running across the Golden Gate Bridge, shirt off, talking matter-of-factly about his morning routine. It expanded to Bo Jackson ("Bo Knows"), Michael Jordan, Serena Williams, and Colin Kaepernick.</p>
+      <h2>8. Advertising Message Hierarchy</h2>
+      <p>Primary: Determination and personal transcendence. Secondary: Sport as a vehicle for human equality. Tertiary: Footwear technology and performance cushioning.</p>
+      <h2>9. Media &amp; Distribution Strategy</h2>
+      <p>Epic cinematic television spots, Super Bowl and Olympic tentpole placements, high-impact outdoor billboards, and athlete sponsorship synergy.</p>
+      <h2>10. Influencer &amp; Cultural Impact</h2>
+      <p>Pioneered modern athlete endorsement contracts by granting creators authentic creative input and backing controversial social stands.</p>
+      <h2>11. Verified Campaign Results</h2>
+      <p>In the ten years following the launch of "Just Do It" (1988–1998), Nike's worldwide footwear sales increased from $877 million to more than $9.2 billion.</p>
+      <h2>12. Key Marketing Lessons</h2>
+      <ul>
+        <li><strong>Emotional Branding Over Product Specs:</strong> Nike sells determination and personal transcendence, not cushioning foam or rubber outsoles.</li>
+        <li><strong>Long-Term Consistency:</strong> Platforms that endure for decades build compounding brand equity that episodic campaigns can never match.</li>
+        <li><strong>Courage in Cultural Conviction:</strong> Believing in something even if it means sacrificing short-term sales creates generational loyalty.</li>
+      </ul>
+      <h2>13. Source References</h2>
+      <p>Nike Annual Reports (1988–1999); Harvard Business School Case: Nike's Global Brand Strategy; Wieden+Kennedy Archive.</p>
+    2:["$","div",null,{"className":"bg-ivory min-h-screen","children":["$","$La",null,{"slug":"nike-just-do-it-evolution","title":"Nike: The 35-Year Evolution of \"Just Do It\"","category":"Global Campaigns","date":"2024-02-28T00:00:00","content":"$b"}]}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"name":"theme-color","content":"#F28C38"}],["$","meta","2",{"charSet":"utf-8"}],["$","title","3",{"children":"Nike: The 35-Year Evolution of \"Just Do It\" — MARKETECTURE Case Study"}],["$","meta","4",{"name":"description","content":"From a simple motivational line to the world's most powerful brand platform spanning four decades of cultural rebellion and heroic determination."}],["$","meta","5",{"name":"author","content":"MARKETECTURE"}],["$","meta","6",{"name":"keywords","content":"marketing,campaigns,strategy,Indian marketing,global marketing,brand strategy,marketing tools,AI marketing"}],["$","meta","7",{"name":"msapplication-TileColor","content":"#F28C38"}],["$","meta","8",{"property":"og:title","content":"Nike: The 35-Year Evolution of \"Just Do It\""}],["$","meta","9",{"property":"og:description","content":"From a simple motivational line to the world's most powerful brand platform spanning four decades of cultural rebellion and heroic determination."}],["$","meta","10",{"property":"og:type","content":"article"}],["$","meta","11",{"property":"article:published_time","content":"2024-02-28T00:00:00"}],["$","meta","12",{"name":"twitter:card","content":"summary"}],["$","meta","13",{"name":"twitter:title","content":"Nike: The 35-Year Evolution of \"Just Do It\""}],["$","meta","14",{"name":"twitter:description","content":"From a simple motivational line to the world's most powerful brand platform spanning four decades of cultural rebellion and heroic determination."}]]
+1:null
