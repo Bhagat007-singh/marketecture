@@ -4,10 +4,11 @@ import { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, ArrowRight, Calendar, Tag, Sparkles } from 'lucide-react';
+import { Search, ArrowRight, Calendar, Tag, Sparkles, Heart } from 'lucide-react';
 import { Campaign } from '@/lib/types';
 import { formatDate } from '@/lib/wordpress';
 import { fallbackCampaigns } from '@/lib/campaigns-data';
+import { getLikesCount, isItemLiked, toggleItemLike } from '@/lib/likes';
 
 export { fallbackCampaigns };
 
@@ -52,6 +53,38 @@ export default function CampaignGrid({ initialCampaigns }: CampaignGridProps) {
     }
     return list;
   }, [initialCampaigns]);
+
+  const [likesMap, setLikesMap] = useState<Record<string, number>>({});
+  const [userLikedMap, setUserLikedMap] = useState<Record<string, boolean>>({});
+
+  useEffect(() => {
+    const lMap: Record<string, number> = {};
+    const uMap: Record<string, boolean> = {};
+    for (const c of allCampaigns) {
+      lMap[c.slug] = getLikesCount(c.slug);
+      uMap[c.slug] = isItemLiked(c.slug);
+    }
+    setLikesMap(lMap);
+    setUserLikedMap(uMap);
+
+    const handleSync = (e: Event) => {
+      const custom = e as CustomEvent;
+      if (custom.detail?.id) {
+        setLikesMap((prev) => ({ ...prev, [custom.detail.id]: custom.detail.count }));
+        setUserLikedMap((prev) => ({ ...prev, [custom.detail.id]: custom.detail.liked }));
+      }
+    };
+    window.addEventListener('marketecture_like_updated', handleSync);
+    return () => window.removeEventListener('marketecture_like_updated', handleSync);
+  }, [allCampaigns]);
+
+  const handleCardLike = (e: React.MouseEvent, slug: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const res = toggleItemLike(slug);
+    setLikesMap((prev) => ({ ...prev, [slug]: res.count }));
+    setUserLikedMap((prev) => ({ ...prev, [slug]: res.liked }));
+  };
 
   const filteredCampaigns = useMemo(() => {
     return allCampaigns.filter((campaign) => {
@@ -153,18 +186,33 @@ export default function CampaignGrid({ initialCampaigns }: CampaignGridProps) {
                     </Link>
                   )}
                   <div className="p-8">
-                    {/* Badge and Date */}
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="editorial-label flex items-center gap-1.5">
-                        <Tag className="w-3 h-3" />
-                        {camp.category}
-                      </span>
-                      {camp.date && (
-                        <span className="text-[11px] text-muted flex items-center gap-1">
-                          <Calendar className="w-3 h-3" />
-                          {formatDate(camp.date)}
+                    {/* Badge, Date & Interactive Like Button */}
+                    <div className="flex items-center justify-between mb-4 gap-2">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="editorial-label flex items-center gap-1.5">
+                          <Tag className="w-3 h-3" />
+                          {camp.category}
                         </span>
-                      )}
+                        {camp.date && (
+                          <span className="text-[11px] text-muted flex items-center gap-1">
+                            <Calendar className="w-3 h-3" />
+                            {formatDate(camp.date)}
+                          </span>
+                        )}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={(e) => handleCardLike(e, camp.slug)}
+                        title={userLikedMap[camp.slug] ? "Unlike this case study" : "Like this case study"}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-mono font-medium transition-all cursor-pointer shrink-0 ${
+                          userLikedMap[camp.slug]
+                            ? 'bg-red-50 text-red-600 border border-red-200 shadow-sm'
+                            : 'bg-navy/[0.04] text-navy/60 hover:text-red-500 hover:bg-red-50/80 border border-transparent hover:border-red-200'
+                        }`}
+                      >
+                        <Heart className={`w-3 h-3 transition-transform ${userLikedMap[camp.slug] ? 'fill-red-600 text-red-600 scale-110' : ''}`} />
+                        <span>{likesMap[camp.slug] || 0}</span>
+                      </button>
                     </div>
 
                     {/* Title */}

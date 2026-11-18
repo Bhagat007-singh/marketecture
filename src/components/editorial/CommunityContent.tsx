@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
@@ -76,7 +76,19 @@ export default function CommunityContent() {
   const [selectedCategory, setSelectedCategory] = useState('All Threads');
   const [threads, setThreads] = useState<DiscussionThread[]>(initialThreads);
   const [likesMap, setLikesMap] = useState<Record<string, number>>({});
-  
+  const [userLikedMap, setUserLikedMap] = useState<Record<string, boolean>>({});
+
+  useEffect(() => {
+    try {
+      const storedLikes = localStorage.getItem('marketecture_circle_likes');
+      if (storedLikes) setLikesMap(JSON.parse(storedLikes));
+      const storedUser = localStorage.getItem('marketecture_circle_user_liked');
+      if (storedUser) setUserLikedMap(JSON.parse(storedUser));
+    } catch {
+      // ignore
+    }
+  }, []);
+
   // Submission Form State
   const [authorName, setAuthorName] = useState('');
   const [threadCategory, setThreadCategory] = useState('Campaign Critiques');
@@ -85,10 +97,23 @@ export default function CommunityContent() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleLike = (id: string) => {
-    setLikesMap((prev) => ({
-      ...prev,
-      [id]: (prev[id] || 0) + 1,
-    }));
+    const isCurrentlyLiked = !!userLikedMap[id];
+    const newLiked = !isCurrentlyLiked;
+    const currentExtra = likesMap[id] || 0;
+    const newExtra = newLiked ? currentExtra + 1 : Math.max(0, currentExtra - 1);
+
+    const updatedLikes = { ...likesMap, [id]: newExtra };
+    const updatedUser = { ...userLikedMap, [id]: newLiked };
+
+    setLikesMap(updatedLikes);
+    setUserLikedMap(updatedUser);
+
+    try {
+      localStorage.setItem('marketecture_circle_likes', JSON.stringify(updatedLikes));
+      localStorage.setItem('marketecture_circle_user_liked', JSON.stringify(updatedUser));
+    } catch {
+      // ignore
+    }
   };
 
   const handlePostSubmit = (e: React.FormEvent) => {
@@ -196,10 +221,16 @@ export default function CommunityContent() {
 
                   <div className="pt-4 border-t border-navy/5 flex items-center justify-between text-xs text-muted">
                     <button
+                      type="button"
                       onClick={() => handleLike(thread.id)}
-                      className="inline-flex items-center gap-1.5 hover:text-orange transition-colors font-mono"
+                      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono transition-all cursor-pointer ${
+                        userLikedMap[thread.id]
+                          ? 'bg-orange/15 text-orange font-bold border border-orange/30 shadow-sm'
+                          : 'text-muted hover:text-orange hover:bg-orange/5'
+                      }`}
+                      title={userLikedMap[thread.id] ? "Withdraw your endorsement" : "Endorse this insight"}
                     >
-                      <ThumbsUp className="w-3.5 h-3.5" />
+                      <ThumbsUp className={`w-3.5 h-3.5 transition-transform ${userLikedMap[thread.id] ? 'fill-orange text-orange scale-110' : ''}`} />
                       <span>{thread.likes + extraLikes} Insights</span>
                     </button>
 

@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Calendar, Tag, Share2, Check, BookOpen, ExternalLink, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, Calendar, Tag, Share2, Check, BookOpen, ExternalLink, ShieldCheck, Heart, Bookmark } from 'lucide-react';
 import { formatDate } from '@/lib/wordpress';
+import { getLikesCount, isItemLiked, toggleItemLike, isItemBookmarked, toggleItemBookmark } from '@/lib/likes';
 import parse from 'html-react-parser';
 
 interface CampaignArticleProps {
@@ -25,6 +26,36 @@ export default function CampaignArticle({
 }: CampaignArticleProps) {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [copied, setCopied] = useState(false);
+  const [likesCount, setLikesCount] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  useEffect(() => {
+    setLikesCount(getLikesCount(slug));
+    setIsLiked(isItemLiked(slug));
+    setIsBookmarked(isItemBookmarked(slug));
+
+    const handleSync = (e: Event) => {
+      const custom = e as CustomEvent;
+      if (custom.detail?.id === slug) {
+        setLikesCount(custom.detail.count);
+        setIsLiked(custom.detail.liked);
+      }
+    };
+    window.addEventListener('marketecture_like_updated', handleSync);
+    return () => window.removeEventListener('marketecture_like_updated', handleSync);
+  }, [slug]);
+
+  const handleToggleLike = () => {
+    const res = toggleItemLike(slug);
+    setIsLiked(res.liked);
+    setLikesCount(res.count);
+  };
+
+  const handleToggleBookmark = () => {
+    const res = toggleItemBookmark(slug);
+    setIsBookmarked(res);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -100,25 +131,59 @@ export default function CampaignArticle({
           )}
 
           {/* Action Bar */}
-          <div className="flex items-center justify-between pb-8 mb-12 border-b border-navy/10 text-xs text-muted">
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-8 mb-12 border-b border-navy/10 text-xs text-muted">
             <div className="flex items-center gap-2">
               <BookOpen className="w-4 h-4 text-orange" />
               <span>Standardised Case Study Architecture</span>
             </div>
-            <button
-              onClick={handleShare}
-              className="inline-flex items-center gap-1.5 text-navy hover:text-orange font-heading font-semibold uppercase tracking-wider transition-colors"
-            >
-              {copied ? (
-                <>
-                  <Check className="w-3.5 h-3.5 text-green-600" /> Copied Link
-                </>
-              ) : (
-                <>
-                  <Share2 className="w-3.5 h-3.5" /> Share Study
-                </>
-              )}
-            </button>
+            <div className="flex items-center gap-2.5">
+              {/* Like / Endorse Button */}
+              <button
+                type="button"
+                onClick={handleToggleLike}
+                aria-label={isLiked ? "Unlike this case study" : "Like this case study"}
+                className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-heading font-semibold transition-all cursor-pointer ${
+                  isLiked
+                    ? 'bg-red-50 text-red-600 border border-red-200 shadow-sm'
+                    : 'bg-white text-navy/70 border border-navy/15 hover:border-red-400 hover:text-red-500'
+                }`}
+              >
+                <Heart className={`w-3.5 h-3.5 transition-transform ${isLiked ? 'fill-red-600 text-red-600 scale-110' : ''}`} />
+                <span>{likesCount} {likesCount === 1 ? 'Like' : 'Likes'}</span>
+              </button>
+
+              {/* Bookmark Button */}
+              <button
+                type="button"
+                onClick={handleToggleBookmark}
+                aria-label={isBookmarked ? "Remove bookmark" : "Bookmark this case study"}
+                className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-heading font-semibold transition-all cursor-pointer ${
+                  isBookmarked
+                    ? 'bg-orange/10 text-orange border border-orange/30 shadow-sm'
+                    : 'bg-white text-navy/70 border border-navy/15 hover:border-orange hover:text-orange'
+                }`}
+              >
+                <Bookmark className={`w-3.5 h-3.5 ${isBookmarked ? 'fill-orange text-orange' : ''}`} />
+                <span>{isBookmarked ? 'Saved' : 'Save'}</span>
+              </button>
+
+              {/* Share Button */}
+              <button
+                type="button"
+                onClick={handleShare}
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white text-navy/70 border border-navy/15 hover:border-orange hover:text-orange text-xs font-heading font-semibold transition-all cursor-pointer"
+              >
+                {copied ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-green-600" /> Copied Link
+                  </>
+                ) : (
+                  <>
+                    <Share2 className="w-3.5 h-3.5" /> Share Study
+                  </>
+                )}
+              </button>
+            </div>
           </div>
 
           {/* WordPress / Dynamic Case Study Content */}
@@ -148,6 +213,31 @@ export default function CampaignArticle({
                 </div>
               </div>
             )}
+          </div>
+
+          {/* Endorsement & Like Banner */}
+          <div className="bg-white p-6 md:p-8 rounded-sm border border-navy/10 shadow-sm mb-12 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+              <h4 className="font-heading font-bold text-base text-navy mb-1 flex items-center gap-2">
+                <Heart className={`w-4 h-4 ${isLiked ? 'fill-red-600 text-red-600' : 'text-red-500'}`} />
+                Found this campaign breakdown valuable?
+              </h4>
+              <p className="text-xs text-muted">
+                Join {likesCount} marketers and strategists who endorsed this strategic teardown.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={handleToggleLike}
+              className={`px-5 py-2.5 rounded-sm text-xs font-heading font-semibold uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer ${
+                isLiked
+                  ? 'bg-red-50 text-red-600 border border-red-200 shadow-sm'
+                  : 'bg-navy text-white hover:bg-orange shadow-md'
+              }`}
+            >
+              <Heart className={`w-4 h-4 ${isLiked ? 'fill-red-600 text-red-600' : ''}`} />
+              <span>{isLiked ? 'Liked & Endorsed' : 'Like This Case Study'}</span>
+            </button>
           </div>
 
           {/* Editorial Disclaimer Banner */}
