@@ -262,6 +262,48 @@ const fallbackStudies: Record<string, FallbackCampaign> = {
       <p>Walter Isaacson's <em>Steve Jobs</em> (2011); TBWA\\Chiat\\Day creative archives; Apple quarterly 10-K filings (1997–1999).</p>
     `,
   },
+  'blinkit-quick-commerce-topical-marketing': {
+    title: 'Blinkit: The 10-Minute Quick Commerce Revolution & Viral Billboard Banter',
+    category: 'Indian Campaigns',
+    date: '2024-03-18T00:00:00',
+    excerpt:
+      'How Blinkit pivoted from Grofers into India’s dominant 10-minute delivery titan, turning urgent household cravings into compounding habit loops and nationwide billboard banter.',
+    content: `
+      <p><strong>INDIAN CAMPAIGN CASE STUDY • BRAND: BLINKIT • FORMAT: QUICK COMMERCE & TOPICAL OOH</strong></p>
+      <p>Founded initially as Grofers and acquired by Zomato for $568 million in 2022, Blinkit transformed urban Indian retail from scheduled, discount-heavy grocery runs into an indispensable 10-minute instant gratification utility.</p>
+      <h2>1. Brand Introduction</h2>
+      <p>Blinkit (headquartered in Gurugram, India) is India's leading quick-commerce delivery platform operating a network of over 600 densely mapped micro-warehouses (dark stores) across all major Indian metropolitan clusters.</p>
+      <h2>2. Business Background &amp; Challenge</h2>
+      <p>As Grofers, the business struggled with high customer acquisition costs, low order margins, and fierce competition from BigBasket and Amazon Pantry. When the pandemic hit, scheduled next-day delivery was too slow for impulsive urban Indian consumers experiencing sudden kitchen and lifestyle shortages.</p>
+      <h2>3. Marketing Objectives</h2>
+      <p>Completely re-educate the Indian consumer from weekly planned grocery lists to on-demand instant orders, establish an unshakeable 10-minute delivery service-level agreement (SLA), and drive unaided top-of-mind recall through cultural humour.</p>
+      <h2>4. Target Audience</h2>
+      <p>Urban working professionals, dual-income households, college students, and Gen-Z consumers aged 18–40 in Tier 1 and Tier 2 Indian cities who value their personal time far above minor price discounts.</p>
+      <h2>5. Consumer Insight</h2>
+      <p>Running out of milk during morning chai or realizing you have no lemons right as guests arrive is an acute, high-friction household panic. If a brand solves that exact frustration in under 10 minutes, price sensitivity drops to near zero.</p>
+      <h2>6. Campaign Idea &amp; Platform</h2>
+      <p><strong>The Instant Pantry of Bharat:</strong> <em>"Blinkit in 10 Minutes"</em>. Position the dark store not as an online store, but as a magical extension of the customer's home refrigerator and medicine cabinet.</p>
+      <h2>7. Creative Execution: The Viral Billboard Collaboration</h2>
+      <p>In early 2023, Zomato and Blinkit launched a viral street-corner outdoor billboard campaign in Gurugram that redefined collaborative OOH advertising in India:
+      <br/><strong>Zomato's Red Billboard:</strong> <em>"Doodh mangoge, doodh denge"</em> (Ask for milk, we'll give milk)
+      <br/><strong>Blinkit's Yellow Billboard:</strong> <em>"Kheer mangoge, kheer denge"</em> (Ask for kheer, we'll give kheer).
+      <br/>The twin-billboard format instantly went viral across LinkedIn, Twitter/X, and Instagram, sparking hundreds of organic parodies from brands like Netflix, Jeevansathi, and police departments.</p>
+      <h2>8. Advertising Message Hierarchy</h2>
+      <p>Primary: 10-minute speed guarantee. Secondary: Everyday essentials (milk, bread, vegetables, electronics). Tertiary: Seasonal emergency kits (Diwali gold/silver coins, emergency phone chargers, festival colors).</p>
+      <h2>9. Media &amp; Distribution Strategy</h2>
+      <p>Hyper-local geo-targeted push notifications triggered around dark store radii, viral street hoardings at metro stations and arterial junctions, and real-time social media topical commentary.</p>
+      <h2>10. Festival Merchandising Blitzes</h2>
+      <p>During Dhanteras and Diwali 2023–2024, Blinkit partnered with Joyalukkas and MMTC-PAMP to deliver certified gold and silver coins in under 10 minutes, delivering hundreds of crores in gross merchandise value within a single afternoon.</p>
+      <h2>11. Verified Campaign Results</h2>
+      <p>Blinkit's gross order value (GOV) grew over 120% year-on-year, achieving operational EBITDA break-even and surpassing parent Zomato's core food delivery business in market valuation contribution ($13B+ standalone valuation implied by analysts).</p>
+      <h2>12. Key Marketing Lessons</h2>
+      <p><strong>Speed Outweighs Discounts:</strong> When delivery speed drops from 2 hours to 10 minutes, consumer purchasing behavior transitions from utilitarian shopping to spontaneous lifestyle indulgence.</p>
+      <p><strong>Parent-Child Brand Synergy:</strong> Cross-leveraging Zomato's red cultural humour with Blinkit's yellow utility generated billions of free organic impressions.</p>
+      <p><strong>Occasion-Based Category Expansion:</strong> Shifting beyond onions and tomatoes to deliver PS5 consoles, gold coins, and iPhone launch units turned a grocery app into an urgent lifestyle delivery icon.</p>
+      <h2>13. Source References</h2>
+      <p>Zomato Ltd. Q2/Q3 FY24 Shareholder Letters; Goldman Sachs &amp; Morgan Stanley Quick Commerce Sector Research (2024); afaqs! and Brand Equity coverage.</p>
+    `,
+  },
 };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

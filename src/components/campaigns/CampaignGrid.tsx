@@ -14,6 +14,16 @@ interface CampaignGridProps {
 
 const fallbackCampaigns: Campaign[] = [
   {
+    id: 100,
+    slug: 'blinkit-quick-commerce-topical-marketing',
+    title: 'Blinkit: The 10-Minute Quick Commerce Revolution & Viral Billboard Banter',
+    excerpt:
+      'How Blinkit pivoted from Grofers into India’s dominant 10-minute delivery titan, turning urgent household cravings into compounding habit loops and nationwide billboard banter.',
+    content: '',
+    date: '2024-03-18T00:00:00',
+    category: 'Indian Campaigns',
+  },
+  {
     id: 101,
     slug: 'amul-girl-topical-advertising',
     title: 'The Amul Girl: Topical Advertising and Cultural Relevance',

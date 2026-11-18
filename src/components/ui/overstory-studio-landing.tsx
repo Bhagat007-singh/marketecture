@@ -35,7 +35,7 @@ export type OvsLink = { label: string; href?: string }
 
 export type OvsMark = "watch" | "slash" | "scribe" | "knot" | "venn" | "leaf"
 
-export type OvsLogo = { name: string; mark?: OvsMark; type?: "sans" | "serif" | "heavy" }
+export type OvsLogo = { name: string; mark?: OvsMark; type?: "sans" | "serif" | "heavy"; image?: string }
 
 export type OvsStat = { value: number; prefix?: string; suffix?: string; decimals?: number; label: string }
 
@@ -48,6 +48,7 @@ export type OvsMock = "dashboard" | "chat" | "doc" | "mobile"
 export type OvsCase = {
   client: string
   mark?: OvsMark
+  image?: string
   kind: string
   title: string
   metric: string
@@ -142,7 +143,6 @@ const DEFAULT_LINKS = [
   { label: "Work", href: "#work" },
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
-  { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
 ]
 
@@ -225,7 +225,7 @@ const DEFAULT_CTA = {
 
 const DEFAULT_FOOTER = {
   columns: [
-    { title: "Studio", links: [{ label: "Work", href: "#work" }, { label: "Services", href: "#services" }, { label: "Process", href: "#process" }, { label: "Pricing", href: "#pricing" }] },
+    { title: "Studio", links: [{ label: "Work", href: "#work" }, { label: "Services", href: "#services" }, { label: "Process", href: "#process" }] },
     { title: "Company", links: [{ label: "About", href: "#about" }, { label: "Careers" }, { label: "Field notes" }, { label: "Press kit" }] },
     { title: "Elsewhere", links: [{ label: "LinkedIn" }, { label: "X" }, { label: "Dribbble" }, { label: "GitHub" }] },
   ],
@@ -956,10 +956,35 @@ function BrandMark() {
   )
 }
 
+function resolveAsset(url?: string): string | undefined {
+  if (!url) return undefined
+  if (url.startsWith("http") || url.startsWith("data:")) return url
+  const base = (typeof process !== "undefined" && process?.env?.NEXT_PUBLIC_BASE_PATH) || ""
+  return `${base}${url.startsWith("/") ? url : "/" + url}`
+}
+
 function Logo({ logo, uid }: { logo: OvsLogo; uid: string }) {
+  const imgSrc = resolveAsset(logo.image)
   return (
     <span className={"ovs-logo ovs-logo-" + (logo.type || "sans")}>
-      <Mark kind={logo.mark} uid={uid} />
+      {imgSrc ? (
+        <img
+          src={imgSrc}
+          alt={logo.name}
+          className="ovs-logo-img"
+          style={{
+            width: "22px",
+            height: "22px",
+            objectFit: "contain",
+            borderRadius: "4px",
+            display: "inline-block",
+            marginRight: "8px",
+            verticalAlign: "middle",
+          }}
+        />
+      ) : (
+        <Mark kind={logo.mark} uid={uid} />
+      )}
       <span>{logo.name}</span>
     </span>
   )
@@ -1476,7 +1501,7 @@ export default function OverstoryStudioLanding({
     if (onBook) {
       e.preventDefault()
       onBook(from)
-    } else go("#contact")(e)
+    } else go("#vault")(e)
   }
 
   // nav: solid once you leave the top, hides while you scroll down, active link follows the section in view
@@ -2134,7 +2159,23 @@ export default function OverstoryStudioLanding({
                       </div>
                       <div className="ovs-card-meta">
                         <p className="ovs-card-client">
-                          <Mark kind={c.mark} uid={uid + "c" + i} />
+                          {c.image ? (
+                            <img
+                              src={resolveAsset(c.image)}
+                              alt={c.client}
+                              style={{
+                                width: "20px",
+                                height: "20px",
+                                objectFit: "contain",
+                                borderRadius: "4px",
+                                display: "inline-block",
+                                marginRight: "6px",
+                                verticalAlign: "middle",
+                              }}
+                            />
+                          ) : (
+                            <Mark kind={c.mark} uid={uid + "c" + i} />
+                          )}
                           {c.client}
                           <span>
                             {c.kind} · {c.year}

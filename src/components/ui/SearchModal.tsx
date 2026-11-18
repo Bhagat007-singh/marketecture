@@ -17,6 +17,14 @@ interface SearchResult {
 
 const localIndex: SearchResult[] = [
   {
+    id: 'local-0',
+    title: 'Blinkit: 10-Minute Delivery Revolution & Viral Billboard Banter',
+    excerpt: 'How Blinkit shifted urban Indian grocery habits to on-demand instant fulfillment, sparking nationwide billboard parodies with Zomato.',
+    slug: 'blinkit-quick-commerce-topical-marketing',
+    type: 'post',
+    link: '/campaigns/blinkit-quick-commerce-topical-marketing',
+  },
+  {
     id: 'local-1',
     title: 'How Zomato Built a Brand People Relate To',
     excerpt: 'A deep look at Zomato’s irreverent conversational tone, notification CRM virality, and cultural positioning.',

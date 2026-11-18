@@ -14,6 +14,13 @@ interface CampaignCard {
 
 const campaigns: CampaignCard[] = [
   {
+    title: 'Blinkit: 10-Minute Delivery Revolution & Viral Billboard Banter',
+    slug: 'blinkit-quick-commerce-topical-marketing',
+    category: 'Indian Campaigns',
+    excerpt:
+      'From Grofers pivot to instant grocery dominance and the viral "Doodh mangoge / Kheer mangoge" billboard masterstroke with Zomato.',
+  },
+  {
     title: 'The Amul Girl: Topical Advertising That Became a Cultural Icon',
     slug: 'amul-girl-topical-advertising',
     category: 'Indian Campaigns',

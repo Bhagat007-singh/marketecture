@@ -6,6 +6,12 @@ import { ArrowRight, Sparkles, FolderArchive } from 'lucide-react';
 
 const indianCampaignFiles: FolderFile[] = [
   {
+    name: 'Blinkit: 10-Min Delivery & Viral Billboards',
+    meta: 'Quick Commerce & OOH Memes',
+    art: 'ember',
+    href: '/campaigns/blinkit-quick-commerce-topical-marketing',
+  },
+  {
     name: 'Zomato: Conversational Tone & Push CRM',
     meta: 'CRM & Viral Memes',
     art: 'ember',
@@ -123,7 +129,7 @@ export default function CampaignFolderVault() {
           <div className="flex flex-col items-center">
             <GlassFolder
               label="Indian Campaigns"
-              meta="4 Case Studies"
+              meta="5 Case Studies"
               tone="dark"
               art="ember"
               seed={5}
@@ -133,6 +139,7 @@ export default function CampaignFolderVault() {
               files={indianCampaignFiles}
               menu={[
                 { label: 'View Indian Hub', onSelect: () => window.location.assign('/indian-marketing') },
+                { label: 'Explore Blinkit Study', onSelect: () => window.location.assign('/campaigns/blinkit-quick-commerce-topical-marketing') },
                 { label: 'Explore Zomato Study', onSelect: () => window.location.assign('/campaigns/zomato-social-media-humour') },
               ]}
             />

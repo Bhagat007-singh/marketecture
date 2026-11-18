@@ -4,6 +4,9 @@ const isGithubPages = process.env.GITHUB_PAGES === 'true' || process.env.GITHUB_
 const nextConfig = {
   output: 'export',
   basePath: isGithubPages ? '/marketecture' : '',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGithubPages ? '/marketecture' : '',
+  },
   trailingSlash: true,
   images: {
     unoptimized: true,

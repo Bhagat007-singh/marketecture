@@ -8,6 +8,7 @@ import OverstoryStudioLanding, {
   OvsLink,
 } from '@/components/ui/overstory-studio-landing';
 import CampaignFolderVault from '@/components/campaigns/CampaignFolderVault';
+import AIDeskFeature from '@/components/ai-tools/AIDeskFeature';
 
 export const metadata: Metadata = {
   title: 'MARKETECTURE — Where Marketing Ideas Take Shape',
@@ -17,17 +18,20 @@ export const metadata: Metadata = {
 
 const NAV_LINKS: OvsLink[] = [
   { label: 'Campaigns', href: '/campaigns' },
-  { label: 'Indian Breakouts', href: '/indian-marketing' },
-  { label: 'Global Titans', href: '/global-marketing' },
+  { label: 'Case Studies', href: '#work' },
+  { label: 'AI Desk', href: '#ai-desk' },
+  { label: '3D Vault', href: '#vault' },
   { label: 'Strategy Hub', href: '/strategy-hub' },
-  { label: 'AI Tools', href: '/ai-marketing-desk' },
-  { label: 'Community', href: '/marketing-circle' },
+  { label: 'Methodology', href: '#process' },
+  { label: 'FAQ', href: '#faq' },
 ];
 
 const LOGOS: OvsLogo[] = [
-  { name: 'ZOMATO', mark: 'slash', type: 'heavy' },
-  { name: 'APPLE', mark: 'knot', type: 'sans' },
-  { name: 'AMUL', mark: 'leaf', type: 'serif' },
+  { name: 'BLINKIT', mark: 'knot', type: 'heavy', image: '/images/brand-logos/blinkit.png' },
+  { name: 'ZOMATO', mark: 'slash', type: 'heavy', image: '/images/brand-logos/zomato.png' },
+  { name: 'APPLE', mark: 'knot', type: 'sans', image: '/images/brand-logos/apple.png' },
+  { name: 'AMUL', mark: 'leaf', type: 'serif', image: '/images/brand-logos/amul.jpg' },
+  { name: 'MARKETECTURE', mark: 'scribe', type: 'heavy', image: '/images/brand-logos/uploaded-logo.png' },
   { name: 'NIKE', mark: 'watch', type: 'heavy' },
   { name: 'BOAT', mark: 'venn', type: 'sans' },
 ];
@@ -54,7 +58,7 @@ const SERVICES: { kicker: string; title: string; text: string; items: OvsService
       art: 'brand',
       time: '10 Case Studies',
       text: 'Vernacular communication, festival triggers, memetic delivery notifications, and street-smart Indian consumer psychology.',
-      tags: ['Zomato', 'Amul Girl', 'Paper Boat', 'boAt D2C', 'Fevicol'],
+      tags: ['Blinkit', 'Zomato', 'Amul Girl', 'Paper Boat', 'boAt D2C'],
     },
     {
       title: 'Global Titans',
@@ -82,8 +86,22 @@ const SERVICES: { kicker: string; title: string; text: string; items: OvsService
 
 const FEATURED_CASES: OvsCase[] = [
   {
+    client: 'Blinkit',
+    mark: 'knot',
+    image: '/images/brand-logos/blinkit.png',
+    kind: 'Quick Commerce & Viral Banter',
+    title: '10-minute delivery economics and the nationwide viral billboard banter with Zomato.',
+    metric: '10 Min',
+    metricLabel: 'instant fulfillment SLA powering $13B+ valuation',
+    year: '2023-Present',
+    mock: 'mobile',
+    tint: ['#fef08a', '#eab308'],
+    href: '/campaigns/blinkit-quick-commerce-topical-marketing',
+  },
+  {
     client: 'Zomato',
     mark: 'slash',
+    image: '/images/brand-logos/zomato.png',
     kind: 'Indian Viral Growth',
     title: 'How humor, push notification banter, and outdoor topicality built India’s food-tech giant.',
     metric: '+142%',
@@ -96,6 +114,7 @@ const FEATURED_CASES: OvsCase[] = [
   {
     client: 'Apple',
     mark: 'knot',
+    image: '/images/brand-logos/apple.png',
     kind: 'Global Brand Revival',
     title: 'The 1997 "Think Different" masterstroke that resurrected Apple from near-bankruptcy.',
     metric: '$3T',
@@ -108,6 +127,7 @@ const FEATURED_CASES: OvsCase[] = [
   {
     client: 'Amul',
     mark: 'leaf',
+    image: '/images/brand-logos/amul.jpg',
     kind: 'Topical Advertising Legacy',
     title: 'The Amul Girl: 58+ years of uninterrupted daily commentary capturing India’s cultural pulse.',
     metric: '58+ Yrs',
@@ -257,6 +277,7 @@ export default function HomePage() {
         trusted: 'Iconic case studies & campaign architecture analyzed from',
         cue: 'Scroll to explore marketing architecture',
       }}
+      links={NAV_LINKS}
       logos={LOGOS}
       manifesto={MANIFESTO}
       stats={STATS}
@@ -290,8 +311,13 @@ export default function HomePage() {
       currency="$"
       newsletter={false}
     >
+      {/* AI Marketing Intelligence Desk Feature */}
+      <div id="ai-desk" data-sec="ai-desk" className="py-6 scroll-mt-20">
+        <AIDeskFeature />
+      </div>
+
       {/* Interactive Frosted-Glass 3D Folder Vault */}
-      <div id="vault" className="pt-6">
+      <div id="vault" data-sec="vault" className="pt-6 scroll-mt-20">
         <CampaignFolderVault />
       </div>
     </OverstoryStudioLanding>
