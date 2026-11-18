@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 55" fill="none">
+  <!-- Origami Paper Boat Mark -->
+  <g transform="translate(6, 6)">
+    <!-- Sail triangles -->
+    <path d="M22 2L9 24H22V2Z" fill="#F28C38"/>
+    <path d="M22 8L33 24H22V8Z" fill="#FFA959"/>
+    <!-- Folded Hull -->
+    <path d="M2 25L9 34H35L42 25H2Z" fill="#FFFFFF"/>
+    <!-- Shadow fold -->
+    <path d="M16 25L22 34L28 25H16Z" fill="#E2E8F0"/>
+  </g>
+  <!-- Typography -->
+  <text x="56" y="27" font-family="'Georgia', serif" font-weight="700" font-size="19" fill="#FFFFFF" letter-spacing="0.5">Paper</text>
+  <text x="110" y="27" font-family="'Georgia', serif" font-weight="700" font-size="19" fill="#F28C38" letter-spacing="0.5">Boat</text>
+  <text x="57" y="39" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="500" font-size="8" fill="#CBD5E1" letter-spacing="2">MEMORIES UNBOTTLED</text>
+</svg>

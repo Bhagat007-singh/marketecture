@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 55" fill="none">
+  <!-- Bitten apple icon in clean white -->
+  <g transform="translate(8, 6) scale(0.7)">
+    <!-- Leaf -->
+    <path d="M30 4C34 0 38 0 38 0C38 0 37 5 33 9C29 13 25 12 25 12C25 12 26 8 30 4Z" fill="#FFFFFF"/>
+    <!-- Body -->
+    <path d="M38.5 24C38.3 18.5 42.8 15.5 43 15.3C40.4 11.6 36.4 11 35 10.9C31.6 10.5 28.3 12.9 26.6 12.9C24.8 12.9 22.1 10.9 19.3 11C15.6 11.1 12.1 13.2 10.2 16.5C6.3 23.3 9.2 33.3 12.9 38.8C14.8 41.4 16.9 44.3 19.8 44.2C22.6 44.1 23.6 42.4 27 42.4C30.3 42.4 31.3 44.2 34.2 44.1C37.2 44 39.1 41.4 40.9 38.7C43.1 35.6 44 32.6 44.1 32.4C44 32.3 38.6 30.2 38.5 24Z" fill="#FFFFFF"/>
+  </g>
+  <text x="48" y="33" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="24" fill="#FFFFFF" letter-spacing="-0.5">Apple</text>
+</svg>

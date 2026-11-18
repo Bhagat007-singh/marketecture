@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 55" fill="none">
+  <!-- Sail emblem -->
+  <g transform="translate(4, 5)">
+    <!-- Back sail -->
+    <path d="M18 3L4 32H26L18 3Z" fill="#E62234"/>
+    <!-- Front sail / wave -->
+    <path d="M22 10L34 32H24L22 10Z" fill="#FFFFFF"/>
+    <!-- Hull curve -->
+    <path d="M2 36C8 42 28 44 36 36L34 34H4L2 36Z" fill="#E62234"/>
+  </g>
+  <!-- boAt typography -->
+  <text x="48" y="34" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="28" fill="#FFFFFF" letter-spacing="-0.5">bo<tspan fill="#E62234">A</tspan>t</text>
+  <text x="49" y="44" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="8" fill="#A0AEC0" letter-spacing="3">LIFESTYLE</text>
+</svg>
