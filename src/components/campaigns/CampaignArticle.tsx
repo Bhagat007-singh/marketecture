@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ArrowLeft, Calendar, Tag, Share2, Check, BookOpen, ExternalLink, ShieldCheck, Heart, Bookmark } from 'lucide-react';
 import { formatDate } from '@/lib/wordpress';
 import { getLikesCount, isItemLiked, toggleItemLike, isItemBookmarked, toggleItemBookmark } from '@/lib/likes';
-import parse from 'html-react-parser';
+import parse, { domToReact, DOMNode, Element } from 'html-react-parser';
 
 interface CampaignArticleProps {
   title: string;
@@ -188,7 +188,23 @@ export default function CampaignArticle({
 
           {/* WordPress / Dynamic Case Study Content */}
           <div className="wp-content mb-16">
-            {content ? parse(content) : (
+            {content ? parse(content, {
+              replace: (domNode) => {
+                if (domNode instanceof Element && domNode.name === 'a') {
+                  const href = domNode.attribs?.href;
+                  if (href && (href.startsWith('/') || href.startsWith('#'))) {
+                    return (
+                      <Link
+                        href={href}
+                        className={domNode.attribs.class || domNode.attribs.className}
+                      >
+                        {domToReact(domNode.children as DOMNode[])}
+                      </Link>
+                    );
+                  }
+                }
+              },
+            }) : (
               <div className="space-y-8 text-navy/80 leading-relaxed">
                 <p>
                   This case study is being synchronised from the Marketecture editorial CMS. Below is the structured analysis framework applied to this campaign:
